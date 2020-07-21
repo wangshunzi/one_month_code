@@ -1,0 +1,20 @@
+p {
+    font-size: 30px;
+    color: orange;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border: 1px dashed orangered;
+    display: block; 
+    margin-left: 60px;
+}
+
+audio {
+    margin-left: 120px;
+}
+
+video {
+    margin-left: 180px;
+}

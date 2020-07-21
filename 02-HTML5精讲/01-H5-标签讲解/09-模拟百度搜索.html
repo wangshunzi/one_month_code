@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度搜索</title>
+</head>
+<body>
+
+<!--
+https://www.baidu.com/s
+
+get
+
+wd="xxx"
+
+https://www.baidu.com/s?wd=xxx
+
+-->
+
+<!--action-->
+<!--
+一旦点击了, 提交按钮
+
+那么, 就会自动提交表单内容(带name属性的表单字段), 到 form.action 指定的地址
+
+?tn=baiduimage&word=%E8%81%94%E9%80%9A
+
+get
+post
+
+base_url https://image.baidu.com/search/index
+get
+
+tn
+
+word
+
+
+-->
+<form action="#" method="get">
+<!--    <label>-->
+<!--        tn:-->
+<!--        <input type="text" name="tn" value="baiduimage" disabled>-->
+<!--    </label>-->
+
+    <label>
+        <input type="text" hidden name="tn" value="baiduimage">
+    </label>
+
+    <label>
+        搜索关键字:
+        <input type="text" name="word">
+    </label>
+
+<!--    <label>-->
+<!--        <input type="file" name="xxx">-->
+<!--    </label>-->
+
+
+    <input type="submit" value="搜索">
+
+</form>
+
+
+
+
+<!--<form action="https://www.baidu.com/s">-->
+<!--    <label>-->
+<!--        搜索关键字:-->
+<!--        <input type="text" name="wd">-->
+<!--    </label>-->
+
+<!--    <input type="submit" value="搜索">-->
+<!--    -->
+<!--</form>-->
+
+
+</body>
+</html>

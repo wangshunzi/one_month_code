@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div+css</title>
+    <style>
+        #nav_bar {
+            height: 140px;
+            background-color: tomato;
+        }
+        #focus {
+            height: 420px;
+            background-color: green;
+            display: flex;
+            justify-content: space-around;
+        }
+        #focus .box {
+            width: 100px;
+            height: 150px;
+            background-color: gray;
+        }
+        .notice {
+            font-size: 30px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!--1. 导航栏-->
+<div id="nav_bar">
+    <p>这是一篇文章: "我为什么这么<span class="notice">好看</span>"</p>
+</div>
+
+<div id="focus">
+
+    <div class="box">
+        课程盒子
+    </div>
+    <div class="box">
+        课程盒子
+    </div>
+    <div class="box">
+        课程盒子
+    </div>
+    <div class="box">
+        课程盒子
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

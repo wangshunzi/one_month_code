@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <resultcode>200</resultcode>
+        <reason>Return Successd!</reason>
+    <result>
+        <province>浙江</province>
+        <city>杭州</city>
+        <areacode>0571</areacode>
+        <zip>310000</zip>
+        <company>中国联通</company>
+    </result>
+</root>

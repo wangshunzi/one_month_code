@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul.nav {
+            margin: 100px auto 0;
+            width: 600px;
+            height: 60px;
+            border: 1px solid tomato;
+        }
+
+        ul.nav li {
+            width: 100px;
+            line-height: 60px;
+            float: left;
+            text-align: center;
+        }
+
+        ul.nav li:hover {
+            background-color: pink;
+        }
+        ul.nav li.current {
+            background-color: tomato;
+        }
+
+        ul.content {
+            width: 600px;
+            height: 300px;
+            border: 1px dashed orangered;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        ul.content li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: none;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        ul.content li.current_content {
+            display: block;
+        }
+        ul.content li:nth-of-type(1) {
+            background-color: lightcyan;
+        }
+        ul.content li:nth-of-type(2) {
+            background-color: cyan;
+        }
+        ul.content li:nth-of-type(3) {
+            background-color: darkcyan;
+        }
+        ul.content li:nth-of-type(4) {
+            background-color: lightyellow;
+        }
+        ul.content li:nth-of-type(5) {
+            background-color: yellow;
+        }
+        ul.content li:nth-of-type(6) {
+            background-color: greenyellow;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let nav_ul = document.getElementsByClassName("nav")[0];
+            let childrens = nav_ul.children;
+            let content_ul = document.getElementsByClassName("content")[0];
+            let content_boxs = content_ul.children;
+            for(let i=0; i < childrens.length; i++) {
+                let li = childrens[i];
+                li.addEventListener("click", function () {
+                    document.getElementsByClassName("current_content")[0].className = '';
+                    content_boxs[i].className = "current_content";
+
+                    document.getElementsByClassName("current")[0].className = '';
+                    li.className = "current";
+
+                })
+            }
+        };
+    </script>
+</head>
+<body>
+
+<ul class="nav">
+    <li class="current">秒杀</li>
+    <li>优惠券</li>
+    <li>Plus会员</li>
+    <li>闪购</li>
+    <li>拍卖</li>
+    <li>京东时尚</li>
+</ul>
+
+<ul class="content">
+    <li class="current_content">秒杀内容</li>
+    <li>优惠券内容</li>
+    <li>会员内容</li>
+    <li>闪购内容</li>
+    <li>拍卖内容</li>
+    <li>京东时尚内容</li>
+</ul>
+
+</body>
+</html>
