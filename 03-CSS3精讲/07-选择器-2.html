@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-选择器</title>
+    <style>
+        div,span {
+            color: green;
+            font-size: 30px;
+        }
+
+        div:hover {
+            color: tomato;
+            background-color: cyan;
+            font-size: 50px;
+        }
+        span::before {
+            content: "xxx";
+        }
+        span:after {
+            content: "ppp";
+        }
+
+        .rotate {
+            font-size: 40px;
+            color: tomato;
+            transform: rotateZ(-30deg);
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>xxx</div>
+<p>123</p>
+<span>abc</span>
+<span>abc</span>
+<span>abc</span>
+<span>abc</span>
+<span>abc</span>
+
+
+<p>Googl<span>e</span></p>
+
+<span class="rotate">我</span>
+
+
+</body>
+</html>

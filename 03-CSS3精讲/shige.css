@@ -1,0 +1,14 @@
+h2 {
+    text-align: center;
+    font-size: 26px;
+    color: green;
+    letter-spacing: 5px;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    color: tomato;
+    letter-spacing: 5px;
+    text-shadow:14px 12px 6px grey;;
+}
