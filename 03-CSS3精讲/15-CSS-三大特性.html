@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css-三大特性</title>
+    <style>
+
+        /*body {*/
+        /*    color: red;*/
+        /*    background-color: orange;*/
+        /*    font-size: 30px;*/
+        /*    border: 10px dashed green;*/
+        /*}*/
+
+
+        /*.big {*/
+        /*    color: red;*/
+        /*    font-size: 20px;*/
+        /*}*/
+
+        /*.color {*/
+        /*    font-size: 40px;*/
+        /*    color: green;*/
+        /*}*/
+
+        /* id */
+        /* 0, 1, 0, 0 */
+
+        /* class */
+        /* 0, 0, 1, 0 */
+
+        /* 0, 1, 1, 0 */
+
+        /*0,1,0,0  */
+        /*0,0,1,0 */
+        /*0,0,0,1*/
+
+        /*0,0,0,1*/
+        /*0,1,0,0*/
+        /*0,0,1,0*/
+        /*0,1,1,1*/
+        div#box {
+            color: red;
+        }
+
+        /*!* 0110 *!*/
+        /*#box.aaa {*/
+        /*    color: green;*/
+        /*}*/
+
+        /* 0, 0, 2, 0 */
+
+
+    </style>
+
+    <style>
+
+        .aaa {
+            color: green !important;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<!-- 1, 0, 0, 0 -->
+<div style="color: orange" id="box" class="aaa">
+    这是一段话
+</div>
+
+
+
+<!--<p class="big color">这是一个段落</p>-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-显示模式</title>
+    <style>
+
+
+
+        /*display: block;*/
+        /*块级元素*/
+        /*1. 占据一整行*/
+        /*2. 能够改尺寸*/
+
+
+        /*display: inline;*/
+        /*行内级别*/
+        /*1. 没有独占一行*/
+        /*2. 不能改尺寸*/
+
+        /*
+        display: inline-block
+        既具备行内级别的特性 + 块级特性
+        行内: 在同一行, 不独占一行
+        块级: 改大小
+        */
+
+        /*span {*/
+        /*    font-size: 50px;*/
+        /*    color: orange;*/
+        /*    background-color: red;*/
+        /*}*/
+        /*.rotate {*/
+        /*    width: 100px;*/
+        /*    height: 200px;*/
+        /*    display: inline-block;*/
+        /*}*/
+
+
+        /*span {*/
+        /*    background-color: red;*/
+        /*    color: #fff;*/
+        /*    margin: 0 auto;*/
+        /*    display: block;*/
+        /*    width: 200px;*/
+        /*}*/
+
+        #box {
+            background-color: tomato;
+            /*height: 100px;*/
+            text-align: center;
+        }
+        span {
+            background-color: orange;
+            display: inline-block;
+        }
+        img {
+            width: 100px;
+        }
+        .small {
+            background-color: cyan;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--<span>g</span>-->
+<!--<span class="rotate">e</span>-->
+
+<div id="box">
+    <span>xxx</span>
+    <img src="cursor.png" alt="">
+    <div class="small">
+        small
+    </div>
+</div>
+
+<!--<span>xxxx</span>-->
+
+
+</body>
+</html>

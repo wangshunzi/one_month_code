@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位</title>
+    <style>
+        body {
+            height: 1000px;
+        }
+        .box2,
+        .box1 {
+            width: 60px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        .box2 {
+            background-color: tomato;
+            left: 150px;
+            top: 150px;
+            z-index: 2;
+        }
+        .box1 {
+            z-index: 3;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box1">
+    box1
+</div>
+<div class="box2">
+    box2
+</div>
+
+
+
+</body>
+</html>

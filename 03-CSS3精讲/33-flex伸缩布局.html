@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>32-flex伸缩布局</title>
+    <style>
+        .box {
+            height: 200px;
+            background-color: tomato;
+            display: flex;
+        }
+        .item {
+            border: 1px solid red;
+            background-color: green;
+        }
+
+        .one {
+            flex: 1;
+            order: 1;
+        }
+        .two {
+            flex: 3;
+            order: 3;
+        }
+        .three {
+            flex: 2;
+            order: 2;
+        }
+        .four {
+            width: 100px;
+            order: 4;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <div class="item one">item1</div>
+    <div class="item two">item2</div>
+    <div class="item three">item3</div>
+    <div class="item four">item4</div>
+
+</div>
+
+
+
+</body>
+</html>

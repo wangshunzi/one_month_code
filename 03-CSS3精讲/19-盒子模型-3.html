@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-盒子模型</title>
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            padding: 20px;
+            border: 10px solid orange;
+        }
+        .box:hover {
+            box-shadow: 10px 10px 5px 5px gray;
+        }
+
+        .box::before {
+            content: "xxx";
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+1
+</div>
+
+
+<!--<div class="box">-->
+<!--2-->
+<!--</div>-->
+
+</body>
+</html>
