@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扑克牌</title>
+    <style>
+
+        .box {
+            width: 100px;
+            height: 150px;
+            border: 1px solid tomato;
+            margin: 400px auto;
+            position: relative;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            background-color: orange;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 2s ease-in;
+        }
+        .box:hover .one {
+            transform: rotate(-90deg) translateY(-300px) scale(1.5, 1.5);
+        }
+        .box:hover .two {
+            transform: rotate(-45deg) translateY(-300px)  scale(1.5, 1.5);
+        }
+        .box:hover .three {
+            transform: rotate(0deg) translateY(-300px)  scale(1.5, 1.5);
+        }
+        .box:hover .four {
+            transform: rotate(45deg) translateY(-300px)  scale(1.5, 1.5);
+        }
+        .box:hover .five {
+            transform: rotate(90deg) translateY(-300px)  scale(1.5, 1.5);
+        }
+        .box:hover .six {
+            transform: rotate(135deg) translateY(-300px)  scale(1.5, 1.5);
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <div class="card one">1</div>
+    <div class="card two">2</div>
+    <div class="card three">3</div>
+    <div class="card four">4</div>
+    <div class="card five">5</div>
+    <div class="card six">6</div>
+</div>
+
+
+</body>
+</html>

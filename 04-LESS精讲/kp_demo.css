@@ -1,0 +1,44 @@
+/* 这个会不会编译到css当中 */
+.box1 {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+.box1 .box2 {
+  width: 400px;
+  height: 400px;
+  background-color: green;
+}
+.box1 .box2 .box3 {
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+}
+.box1 .box2 .box3 p {
+  color: tomato;
+  font-size: 22px;
+}
+.box1 .box2 .box3 p:hover {
+  color: green;
+}
+.circle1 {
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 196px;
+  color: green;
+}
+.circle2 {
+  width: 100px;
+  height: 100px;
+  border: 10px solid red;
+  box-sizing: border-box;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 80px;
+  color: green;
+}
+/*# sourceMappingURL=kp_demo.css.map */

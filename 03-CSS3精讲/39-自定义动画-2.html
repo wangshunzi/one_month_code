@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>38-自定义动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 150px;
+            background-color: tomato;
+            animation: lt 10s linear;
+        }
+
+
+        @keyframes lt {
+
+            10% {
+                transform: translateX(500px);
+            }
+            25% {
+                transform: translateX(500px) translateY(300px);
+            }
+            50% {
+                transform: translateX(500px) translateY(300px) rotate(80deg);
+            }
+            100% {
+                transform: translateX(500px) translateY(300px) rotate(80deg) scale(1.5, 1.5);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    box
+</div>
+
+
+
+
+
+</body>
+</html>

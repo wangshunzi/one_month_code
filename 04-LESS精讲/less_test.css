@@ -1,0 +1,10 @@
+.box {
+  width: 300px;
+}
+.box .box2 {
+  height: 200px;
+  background-color: orange;
+  color: green;
+  font-size: 30px;
+}
+/*# sourceMappingURL=less_test.css.map */

@@ -1,0 +1,53 @@
+// 这个会不会被编译到css文件当中?
+
+/* 这个会不会编译到css当中 */
+
+// 1. 抽取主题色为一个变量
+@theme_color: green;
+
+//@p_name: color;
+
+.box1 {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+  .box2 {
+    width: 400px;
+    height: 400px;
+    background-color: green;
+    .box3 {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      p {
+        color: tomato;
+        font-size: 22px;
+        &:hover {
+          color: @theme_color;
+        }
+      }
+    }
+  }
+}
+
+// 混合(js函数)
+// 接收参数
+.make_c(@radius, @border_w:10px, @border_color:red) when (iscolor(@border_color)){
+  width: @radius * 2px;
+  height: @radius * 2px;
+  border: @border_w + 0px solid @border_color;
+  box-sizing: border-box;
+  border-radius: @radius + 0px;
+  text-align: center;
+  line-height: @radius * 2px - (2px * @border_w);
+  color: @theme_color;
+}
+
+
+.circle1 {
+  .make_c(100, 2, red)
+}
+
+.circle2 {
+  .make_c(50)
+}

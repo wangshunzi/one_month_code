@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40-无限滚动轮播图</title>
+    <style>
+
+        .ad_pane {
+            width: 1800px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: cyan;
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: xxx 10s linear infinite;
+        }
+
+        .ad_pane>li {
+            width: 300px;
+            height: 150px;
+            background-color: tomato;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 600px;
+            height: 150px;
+            border: 2px dashed greenyellow;
+            position: relative;
+            margin: 100px auto;
+            /*overflow: hidden;*/
+        }
+
+        .box:hover .ad_pane {
+            animation-play-state: paused;
+        }
+
+
+        @keyframes xxx {
+            from {
+                left: 0
+            }
+            to {
+                left: -1200px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <ul class="ad_pane">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>
