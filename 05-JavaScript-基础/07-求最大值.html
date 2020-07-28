@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求最大值</title>
+</head>
+<body>
+
+
+
+<script>
+    // 用户从键盘输入3个整数, 找到最大值并输出?
+
+    // 1. 接收用户输入的三个数据
+    let num1 = +prompt("请输入数值1: ");
+    let num2 = parseInt(prompt("请输入数值2: "));
+    let num3 = Number(prompt("请输入数值3: "));
+
+    console.log("接收数值,", num1, num2, num3);
+
+    let is_continue = isNaN(num1) || isNaN(num2) || isNaN(num3);
+
+    if (is_continue) {
+        alert("数据有问题, 请重新输入");
+    } else {
+        // 2. 比对数据大小, 取的最大值, 并且输出
+        // 2.1 先比对 num1 和 num2 当中的最大值
+        let temp = num1 > num2 ? num1 : num2;
+
+        // 2.2 比对temp 和 num3
+        let result = temp > num3 ? temp : num3;
+
+        // 2.3 输出结果
+        // console.log("最大值是" + result);
+        console.log(`最大值是: ${result}`);
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

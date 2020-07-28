@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体验</title>
+</head>
+<body>
+
+
+<input type="text" id="account">
+<input type="button" id="submit" value="提交">
+
+
+<script>
+
+    // ES6
+    // IDE 检测代码是否正确的时候, 参照的语法标准规范: 哪一个版本?
+    let NUM = 10;
+
+    // 基本的语法格式
+    // 变量定义, 怎么定义
+    // 对象是什么格式..
+    // 判定: if () {}
+    let obj = {
+        name: "sz",
+        age: 18,
+        run: function () {
+            console.log("能跑")
+        }
+    }
+
+    obj.run()
+
+
+    // 基于语法规范, 浏览器, 进行了一些列扩展
+    window.alert("")
+    console.log("")
+
+
+    // js代码
+
+    // 1. 获取到两个dom元素
+    let account_dom = document.getElementById("account");
+    let btn = document.getElementById("submit");
+
+    // 2. 监听btn点击
+    btn.onclick = function () {
+
+        // 3. 拿到用户输入的数据
+        let iphone = account_dom.value;
+
+        // 4. 做一个判定验证
+        if (iphone.length === 11) {
+            // console.log("格式正确")
+            window.alert("格式正确")
+        } else {
+            // console.log("格式错误")
+            alert("格式错误")
+        }
+
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

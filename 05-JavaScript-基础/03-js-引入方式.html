@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引入方式</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="box" onclick="let a = 10; let b = 30; alert(a + b);">-->
+<!--    这是一个盒子-->
+<!--</div>-->
+
+
+<div class="box" onclick="alert_sum()">
+    这是一个盒子1
+</div>
+
+
+<div class="box" onclick="alert_sum()">
+    这是一个盒子2
+</div>
+
+
+<script src="index.js">
+
+    // 以后, 这里不要写js代码, 不会被执行
+    alert(123456);
+
+</script>
+
+<!--浏览器, 解析网页的时候, 发现, script type = "text/javascript" 的时候, 才会把内部包裹的代码, 当做js执行-->
+<!-- type="text/html" 不会执行内部的代码; 可以充当注释来使用-->
+
+<script type="text/html">
+
+
+    // function alert_sum() {
+    //     let a = 10;
+    //     let b = 30;
+    //     alert(a + b)
+    // }
+
+
+    // 当网页完全加载(渲染出来之后), 就会执行window.onload 对应的函数
+    // window.onload = function () {
+    //
+    //     for (let i = 0; i < 100000; i++) {
+    //         console.log("123")
+    //     }
+    //
+    // }
+    //
+    // console.log("1网页没有渲染");
+
+
+
+    // 在此处
+    // 对象在内存当中, 创建阶段 ; 还没有渲染
+
+    // 我再这里, 如果执行的js代码, 是一个耗时操作, 那么, 就意味着, 渲染的时间, 会延后
+    // 5
+    // for (let i = 0; i < 100000; i++) {
+    //     console.log("123")
+    // }
+
+
+    // // 1. 获取到盒子
+    // let box = document.getElementsByClassName("box")[0]
+    // //
+    //
+    // // 2. 监听盒子点击事件
+    // box.onclick = function () {
+    //     alert("123");
+    // }
+
+</script>
+</body>
+</html>
