@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-数组</title>
+</head>
+<body>
+
+<script type="text/html">
+
+    // 使用 [] 进行包裹
+    // 多个元素之间, 使用, 做分割
+    let arr = []
+
+    // 创建一个数组, "a"  "b"  "c"
+    let arr2 = ["a", "b", "c"];
+
+    //
+    // 功能: 直接在数组的结尾处, 追加一个元素, 会影响数组本身
+    // 返回值: 追加元素之后, 整个数组的长度
+    console.log(arr2.push("d", "e"));
+
+    // 功能: 直接在数组的开始处, 追加一个元素, 会影响数组本身
+    // 返回值: 追加元素之后, 整个数组的长度
+    // console.log(arr2.unshift("d", "e"));
+
+
+    console.log(arr2)
+
+
+
+</script>
+
+<script type="text/html">
+
+    let arr2 = ["a", "b", "c"];
+
+    // 功能: 会将数组的最后一个元素删除
+    // 返回值: 这个删除的元素
+    // console.log(arr2.pop());
+    //
+    // console.log(arr2)
+
+    // 功能: 会将数组的第一个元素删除
+    // 返回值: 这个删除的元素
+    // console.log(arr2.shift());
+    //
+    // console.log(arr2)
+
+
+    // arr2.splice()
+
+</script>
+
+
+<script>
+    // let arr = ["a", "b", "c" , "b", "d"];
+
+    // console.log(arr[0])
+
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     console.log(arr[i])
+    // }
+
+
+    // console.log(arr.indexOf("b"));
+
+    // console.log(arr.lastIndexOf("bb"));
+
+
+    // arr
+    // 数组里面有没有包含某一个元素
+
+    // arr.indexOf(item) !== -1
+
+
+    // console.log(arr.join(","))
+
+
+    // let date = [2020, 7, 29];
+    //
+    // console.log(date.join("/"));
+
+
+
+    let arr1 = [1, 2, 3];
+    let arr2 = [4, 5, 6];
+
+
+    console.log(arr1.concat(arr2));
+
+
+    // [1, 2, 3, 4, 5, 6]
+    // for (let i = 0; i < arr2.length; i++) {
+    //     let num = arr2[i]
+    //     // console.log(num)
+    //     arr1.push(num)
+    // }
+    //
+    //
+    // console.log(arr1);
+
+
+</script>
+
+</body>
+</html>

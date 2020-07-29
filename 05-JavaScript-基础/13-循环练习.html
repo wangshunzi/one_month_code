@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-循环练习</title>
+</head>
+<body>
+
+<script type="text/html">
+
+    // 1. 接收用户输入一个数据
+    let num = +prompt("请输入一个正整数:");
+
+
+    let sum = 0;
+    // 2. 计算累加和
+    // 6 : 1 + 2 + 3 + ... + 6;
+    for (let i = 1; i <= num; i++) {
+        sum = sum + i;
+    }
+    console.log(sum)
+
+
+
+</script>
+
+<script type="text/html">
+    let num = +prompt("请输入一个正整数:");
+
+    // 1 2 ... num
+
+    // 6: 1 + 2 + 3 ... 6;
+    // 6: 6 + 5 + 4 + .. 1
+
+
+    let sum = num;
+    while (num-- >= 1) {
+        sum += num
+    }
+    console.log(sum)
+
+
+
+    // let sum = 0;
+    //
+    // let i = 1;
+    // while (i <= num) {
+    //     sum = sum + i;
+    //     i++;
+    // }
+    // console.log(sum)
+
+
+</script>
+
+
+<script type="text/html">
+    // 2）获取1～100之间 7的倍数的个数并打印，并统计个数
+    let count = 0;
+    for (let i = 1; i <= 100; i++) {
+        if (i % 7 === 0) {
+            console.log(i);
+            count ++;
+        }
+    }
+
+    console.log("总共", count)
+
+</script>
+
+<script>
+    // 2）获取1～100之间 7的倍数的个数并打印，并统计个数
+    let count = 0;
+    for (let i = 7; i <= 100; i+=7) {
+         console.log(i)
+         count ++;
+    }
+    console.log(count)
+
+
+</script>
+
+</body>
+</html>

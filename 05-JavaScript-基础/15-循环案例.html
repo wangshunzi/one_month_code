@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-循环案例</title>
+</head>
+<body>
+
+<script type="text/html">
+
+    while (true) {
+        // 1. 接收用户输入账号和密码
+        let account = prompt("请输入账号: ");
+        let password = prompt("请输入密码: ");
+
+        // 2. 判断, 是否和正确的账号和密码一样
+        if(account === "itlike" && password === "123") {
+            // 2.1 一样: 提示
+            console.log("登录成功")
+            break;
+        } else {
+            // 2.2 不一样: 再次输入, 判定(1, 2)
+            console.log("登录失败, 请重新输入")
+        }
+    }
+
+
+
+
+
+</script>
+
+<script type="text/html">
+    /*
+    性别 女
+    年龄 18
+    身高 168
+    * */
+
+    // 循环次数, 没法确定
+    while(true) {
+        let sex = prompt("请输入你的性别(男/女):");
+        let age = +prompt("请输入你的年龄: ");
+        let height = +prompt("请输入你的身高(cm):");
+
+        if (sex === "女" && age === 18 && height === 168) {
+            console.log("抓到了嫌疑犯")
+            break;
+        }
+        console.log("此人不是嫌疑犯, 继续筛选")
+    }
+
+
+
+
+</script>
+
+<script type="text/html">
+    /*
+    性别 女
+    年龄 18
+    身高 168
+    * */
+
+    // 循环次数, 没法确定
+    while(true) {
+        let sex = prompt("请输入你的性别(男/女):");
+        if (sex !== "女") {
+            console.log("此人不是嫌疑犯, 继续筛选")
+            continue;
+        }
+        let age = +prompt("请输入你的年龄: ");
+        if (age !== 18) {
+            console.log("此人不是嫌疑犯, 继续筛选")
+            continue;
+        }
+        let height = +prompt("请输入你的身高(cm):");
+        if (height !== 168) {
+            console.log("此人不是嫌疑犯, 继续筛选")
+            continue;
+        }
+        console.log("抓到了嫌疑犯")
+        break;
+
+    }
+
+
+
+</script>
+
+
+<script>
+
+
+    // 1. 生成一个 1 - 10 随机数 整数
+    let result = Math.round(Math.random() * 9 + 1)
+
+    // 2. 开始采集用户输入的结果, 对比 -> 是否正确
+    let i;
+    for (i = 1; i <= 3; i ++) {
+        // 采集用户的结果
+        let num = +prompt("请输入你猜的结果: ");
+
+        if (num === result) {
+            console.log("恭喜你, 猜对了!")
+            break;
+        }
+        // 肯定没有猜对
+        if (num > result) {
+            console.log("偏大")
+        } else {
+            console.log("偏小")
+        }
+    }
+
+    console.log(i);
+    if (i === 4) {
+        console.log("你输了!")
+    }
+
+
+</script>
+
+</body>
+</html>
