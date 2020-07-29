@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-if案例</title>
+</head>
+<body>
+
+<script type="text/html">
+
+    /*
+     输入一个分数, 给出成绩级别
+     SSS 100分
+     A级 90+
+     B级 80+
+     C级 60+
+     D级 60-
+     */
+
+    // 0 100
+    let score = +prompt("请输入一个分数:");
+
+    // 错误的条件
+    // 非数值
+    // 判定范围(0-100)
+    if (isNaN(score) || score < 0 || score > 100) {
+        console.error("你输入的数据有误")
+    } else {
+        let level = "";
+        if (score === 100) {
+            level = "SSS";
+        } else if (score >= 90) {
+            level = "A级";
+        } else if (score >= 80) {
+            level = "B级";
+        } else if (score >= 60) {
+            level = "C级";
+        } else {
+            level = "D级";
+        }
+
+        alert(level)
+    }
+
+
+</script>
+
+
+<script type="text/html">
+
+    /*
+     输入一个分数, 给出成绩级别
+     SSS 100分
+     A级 90+
+     B级 80+
+     C级 60+
+     D级 60-
+     */
+
+    // 0 100
+    let score = 61;
+
+    let level = "";
+    if (score === 100) {
+        level = "SSS";
+    } else if (score >= 90) {
+        level = "A级";
+    } else if (score >= 80) {
+        level = "B级";
+    } else if (score >= 60) {
+        level = "C级";
+    } else {
+        level = "D级";
+    }
+
+    alert(level)
+
+
+</script>
+
+
+<script type="text/html">
+
+   /*
+    输入一个分数, 给出成绩级别
+    SSS 100分
+    A级 90+
+    B级 80+
+    C级 60+
+    D级 60-
+    */
+
+    // 0 100
+    let score = 59;
+
+    if (score === 100) {
+        console.log("SSS")
+    } else {
+        // score !== 100
+        // score < 100
+        if (score >= 90) {
+            console.log("A级")
+        } else {
+            // score < 90
+            if (score >= 80) {
+                console.log("B级")
+            } else {
+                // score < 80
+                if (score >= 60) {
+                    console.log("C级")
+                } else {
+                    // score < 60
+                    console.log("D级")
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+</script>
+
+
+<script type="text/html">
+    // 从键盘输入一个手机号, 判断其是否合法
+    // 纯数字
+    // 11位
+
+    // 1. 接收手机号码
+    let phoneNum = prompt("请输入你的手机号码:");
+
+    // 2. 判定
+    if (phoneNum.length === 11 && !isNaN(+phoneNum) && parseInt(phoneNum) === +phoneNum) {
+        console.log("格式正确")
+    } else {
+        console.log("格式错误")
+    }
+
+
+</script>
+
+
+<script type="text/html">
+    // 从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO；
+
+    // 1. 接收用户输入一个数据
+    let num = +prompt("请输入一个整数: ")
+
+    // 1.1 作判定, 来看一下, 输入的数据, 是否满足需求
+    // 如果有问题, 给用户一个提示(非法数字, 小数)
+    // 小数的判定方式: num % 1 === 0
+    //
+    if (isNaN(num) || parseInt(num) !== num) {
+        console.error("输入的内容有误")
+    } else {
+        // 输入的数据没有问题
+        console.log(num)
+        // 2. 判定数据是否是偶数
+        // 8
+        // 8 % 2 = 0
+        if (num % 2 !== 0) {
+            console.log("是奇数")
+        } else {
+            console.log("是偶数")
+        }
+
+    }
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

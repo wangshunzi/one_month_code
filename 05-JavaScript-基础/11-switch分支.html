@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-switch分支</title>
+</head>
+<body>
+
+<script type="text/html">
+
+    /*
+    输入一个分数, 给出成绩级别
+    S 100分
+    A 90+
+    B 80+
+    C 60+
+    D 60-
+    */
+
+    let level = prompt("请输入级别(S, A, B, C, D):")
+
+    // S
+
+    if (level === "S") {
+    console.log("100分");
+    } else if (level === "A") {
+    console.log("90+分");
+    } else if (level === "B") {
+    console.log("80+分");
+    } else if (level === "C") {
+    console.log("60+分");
+    } else if (level === "D") {
+    console.log("60-分");
+    } else {
+    // S A B C D
+    }
+
+</script>
+<script type="text/html">
+
+    let level = prompt("请输入级别(S, A, B, C, D):")
+
+
+    // ===
+    // ==
+
+    switch (level) {
+    case "S":
+    console.log("100分");
+    break;
+    case "A":
+    console.log("90+分");
+    break;
+    case "B":
+    console.log("80+分");
+    break;
+    case "C":
+    console.log("60+分");
+    break;
+    case "D":
+    console.log("60-分");
+    break;
+    default:
+    console.log("请输入级别范围(S, A, B, C, D)")
+    break;
+
+    }
+
+
+</script>
+
+<script>
+
+ /*   1. 使用switch实现简单的计算器
+    输入
+        参数1
+        参数2
+        运算符
+    输出
+        结果
+    */
+
+
+    // num1 num2  operation
+    // num1 operation num2
+
+    let num1 = prompt("请输入数值1: ");
+    let num2 = prompt("请输入数值2: ");
+    let operation = prompt("请输入运算符:");
+
+    // "2 ** 3"
+
+    let str = num1 + operation + num2
+
+    console.log(str)
+
+    let result = eval(str);
+    console.log(result)
+
+
+
+    // switch (operation) {
+    //     case "*":
+    //         result = num1 * num2;
+    //         break;
+    //     case "/":
+    //         result = num1 / num2;
+    //         break;
+    //     case "-":
+    //         result = num1 - num2;
+    //         break;
+    //     case "+":
+    //         result = num1 + num2;
+    //         break;
+    //     default:
+    //         console.warn("此功能暂未开发!");
+    // }
+    //
+    // // 2 * 3 = 6
+    // console.log(`${num1} ${operation} ${num2} = ${result}`)
+
+
+
+
+
+</script>
+
+
+
+<script type="text/html">
+
+
+    /*
+     输入一个分数, 给出成绩级别
+     SSS 100分
+     A级 90+
+     B级 80+
+     C级 60+
+     D级 60-
+     */
+
+
+    // if (sex === 1) {
+    //     console.log("男")
+    // }
+    //
+    // switch (sex) {
+    //     case 1:
+    //         console.log("男");
+    //         break;
+    //
+    // }
+
+
+    /*
+    * score 除以 10 取整数
+     SSS 100分 10
+     A级 90+  9
+     B级 80+  8
+     C级 60+  6 7
+     D级 60-  5 4 3 2 1
+    * */
+
+
+    let score = +prompt("请输入分数:");
+    switch (parseInt(score / 10 + "")) {
+        case 10:
+            console.log("SSS");
+            break;
+        case 9:
+            console.log("A")
+            break;
+        case 8:
+            console.log("B")
+            break;
+        case 7:
+            // console.log("C")
+            // break;
+        case 6:
+            console.log("C")
+            break;
+        default:
+            console.log("D")
+    }
+
+
+</script>
+
+</body>
+</html>

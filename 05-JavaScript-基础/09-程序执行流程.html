@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-程序执行流程</title>
+</head>
+<body>
+
+
+<script>
+
+    let age = 10;
+    if (age > 18) {
+        console.log("成年了");
+    }
+
+
+    // let age = 10;
+    // if (age >= 18)
+    // {
+    //     console.log("成年了")
+    //     console.log("你可以去网吧了")
+    // } else {
+    //     console.log("未成年");
+    //     console.log("回家学习去")
+    // }
+
+
+    let score = 90;
+
+
+    if (score < 60) {
+        console.log("不及格");
+    } else {
+        // score >= 60
+        if (score <= 80) {
+            console.log("良好")
+        } else {
+            console.log("优秀")
+        }
+
+    }
+
+
+    // < 60 不及格
+    // >=60 && <= 80 良好
+    // > 80 优秀
+    // if (score < 60) {
+    //     console.log("不及格")
+    // } else if (score <= 80) {
+    //     // score >=60 && score <= 80
+    //     console.log("良好")
+    // } else {
+    //     // score > 80
+    //     console.log("优秀")
+    //
+    // }
+
+
+
+</script>
+
+
+
+<script type="text/html">
+
+    if(age > 18)
+        console.log(1);
+
+
+
+    console.log(2);
+
+
+
+    {
+        console.log("不及格");
+        console.log("奖励一个搓衣板");
+    }
+
+
+    {
+        console.log("优秀");
+        console.log("奖励一个棒棒糖");
+    }
+
+
+</script>
+
+
+</body>
+</html>

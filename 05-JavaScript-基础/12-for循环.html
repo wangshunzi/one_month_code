@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-for循环</title>
+</head>
+<body>
+
+
+<script>
+
+    let i = 1;
+    while (i <= 100) {
+        // let num = 100;
+        // if (i < 10) {
+        //     num = "00" + i;
+        // } else if (i < 100) {
+        //     num = "0" + i;
+        // }
+
+        let num = i;
+        if (num < 100) {
+            num = "0" + num;
+        }
+        if (num < 10) {
+            num = "0" + num;
+        }
+
+        console.log("itlike"+num);
+        i++;
+    }
+
+
+
+    // let age = 10;
+    // while (age < 18) {
+    //     console.log("未成年", age)
+    //
+    //     // 在循环体内部, 一定要注意, 直接控制/间接控制, 循环条件的改变
+    //     age++
+    // }
+
+</script>
+
+
+
+<script type="text/html">
+
+
+    for (let j = 1; j <= 9; j++) {
+        // console.log(j)
+        // let num = j;
+        let rowStr = ""
+        for (let i = 1; i <= j; i++) {
+            let expression = `${i}*${j}=${i*j}\t`
+            rowStr += expression;
+        }
+        console.log(rowStr)
+    }
+
+
+
+
+
+
+</script>
+
+
+<script type="text/html">
+
+/*      好友列表1
+            好友1
+            好友2
+            好友3
+        好友列表2
+            好友1
+            好友2
+            好友3
+    */
+
+
+    for (let i = 0; i < 2; i++) {
+        // console.log(i)
+        console.log(`好友列表${i + 1}`)
+
+        // console.log("好友1")
+        // console.log("好友2")
+        // console.log("好友3")
+        for (let j = 0; j < 3; j++) {
+            console.log(`好友${j + 1}`)
+        }
+
+    }
+
+
+
+
+</script>
+
+<script type="text/html">
+
+    // 123456789
+    // console.log(1);
+
+    let num = 5;
+
+    for(let i = 0; i < num; i++) {
+        console.log(i)
+    }
+
+
+
+</script>
+
+
+</body>
+</html>
