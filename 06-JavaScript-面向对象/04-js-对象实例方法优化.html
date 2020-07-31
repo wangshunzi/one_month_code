@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-js-对象实例方法优化</title>
+</head>
+<body>
+
+
+<input type="text" placeholder="请输入姓名:" id="name" value="123">
+<input type="text" placeholder="请输入年龄:" id="age">
+
+<input type="button" value="添加" onclick="addPerson()">
+<input type="button" value="查看当前全部人员" onclick="viewAll()">
+
+
+
+
+
+<script type="text/html">
+
+
+    // let xx = {
+    //     name: "Sz",
+    //     age: 18,
+    //     run: function () {
+    //
+    //     }
+    // }
+
+    // xx.age = 19
+
+    // 遍历对象
+    // for in
+
+    // for (const key in xx) {
+    //     console.log(key, xx[key])
+    // }
+
+
+    // let arr = ["a", "b", "c"];
+    // for (const key in arr) {
+    //     console.log(key, arr[key])
+    // }
+
+
+
+
+
+    function circle(r, cb) {
+
+        let zc = 2 * Math.PI * r;
+        let mj = Math.PI * r * r;
+
+        cb(zc, mj)
+
+    }
+
+    circle(3, function (a, b) {
+        console.log("周长", a)
+        console.log("面积", b)
+    });
+
+
+    // function test(cb) {
+    //     let num = 666;
+    //     // console.log(num)
+    //
+    //     cb(num)
+    // }
+    //
+    // test(function (val) {
+    //     console.log(val)
+    // })
+
+
+    //
+    // ["a", "b", "c"].forEach(function (item) {
+    //
+    // })
+
+
+
+
+    // function add(num1, num2) {
+    //     return num1 + num2;
+    // }
+    //
+    // function jian(num1, num2) {
+    //     return num1 - num2;
+    // }
+
+
+
+    // 把函数当做是参数, 传递给另外一个函数,
+    // 函数参数的执行, 宿主函数执行
+    // function exec(func, num1, num2) {
+    //     // add
+    //     // 1
+    //     // 2
+    //     // add(1,2)
+    //     return func(num1, num2)
+    // }
+    //
+    //
+    // console.log(exec(jian, 1, 2));;
+
+
+    // let arr = ["a", "b"]
+
+
+
+    // arr.forEach(function (item) {
+    //     console.log("")
+    // })
+
+    // function add(num) {
+    //     console.log(num)
+    // }
+    //
+    // console.log(num)
+
+    // if (age > 10) {
+    //     let num = 10;
+    //     console.log(num)
+    // }
+
+
+
+
+
+    // function add(a, b) {
+    //     if (typeof a !== "number" || typeof b !== "number") {
+    //         console.error("请传递正确, 数值类型参数")
+    //         return;
+    //     }
+    //
+    //     return a + b;
+    // }
+    //
+    // let num = add("a", "b")
+    // console.log()
+
+
+
+    // let add = function () {
+    //
+    // }
+
+
+//    ["a", "b", "c"].forEach(   function (v) {
+//
+//        console.log(v)
+//
+//    }    )
+
+
+    // function my_foreach(arr, fn) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let v = arr[i];
+    //         fn(v)
+    //     }
+    // }
+    //
+    //
+    // my_foreach(["a", "b", "c"], function (v) {
+    //     console.log("xxx", v)
+    // })
+
+
+
+
+    // let name = "sz"
+    // console.log(name === "sz");
+
+    // let name = "sz";
+    // let age = 18;
+    // "我是" + name + "年龄是" + age
+    //
+    // `我是${name}, 年龄是${age}`
+    //
+    //
+    // 1 + 2 + 3 + 4;
+    //
+    // console.log(1 + 2 + 3 + 4;)
+
+
+    // 浏览器, 给我们提供了一些对象
+    // window document .... Math
+
+   // let dom = document.getElementById("name")
+   //  console.dir(dom)
+
+
+    // let result = window.prompt("请输入xxx")
+    // console.log(result)
+
+
+</script>
+
+
+<script type="text/html">
+
+
+
+    // 人员检索: 姓名
+
+    let person_arr = []
+
+    function addPerson() {
+        let name_v = document.getElementById("name").value
+        let age_v = document.getElementById("age").value
+        console.log(name_v, age_v)
+
+        person_arr.push({
+            name: name_v,
+            age: age_v
+        })
+    }
+
+    function viewAll() {
+        console.log(person_arr)
+    }
+
+
+</script>
+
+
+<script type="text/html">
+
+
+    // 输入多个人信息, 保存到数组里面
+
+    // [
+    //   {name: "sz", age: 18},
+    //   {name: "sz", age: 19}
+    // ]
+
+    // 人员管理系统
+    // 人员录入
+    //
+
+
+    // let run_func = function () {
+    //     // this
+    //     // 谁调用, 就是谁
+    //     console.log(this.name, "跑");
+    // }
+    //
+    //
+    // function Person(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    //
+    //     // 增加实例方法
+    //     this.run = run_func
+    // }
+    //
+    // let p1 = new Person("sz", 18);
+    // let p2 = new Person("zs", 19);
+    //
+    // p1.run()
+    // p2.run()
+    // // console.log(p1, p2)
+    // console.log(p1.run === p2.run);
+
+
+</script>
+
+
+
+</body>
+</html>

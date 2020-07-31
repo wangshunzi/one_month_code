@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+</head>
+<body>
+
+
+<script type="text/html">
+
+    // let arr = ["a", "b", "c"]
+    // arr.indexOf("b") === -1
+
+
+    // let person = {
+    //     name: "sz",
+    //     age: 18,
+    //     __proto__: {
+    //         xxx: 18
+    //     }
+    // }
+    //
+    // console.log("xxx" in person);
+    //
+    // console.log(person.hasOwnProperty("xxx"));
+    //
+    // console.log("name" in person && !person.hasOwnProperty("name"));
+
+
+</script>
+
+
+
+<script type="text/html">
+    // function Person(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    //
+    // Person.prototype = {
+    //     constructor: Person,
+    //     run: function () {
+    //         console.log(this.name, "跑!")
+    //     },
+    //     eat: function () {
+    //         console.log(this.name, "吃!")
+    //     }
+    // }
+
+
+    // let p = new Person("sz", 18);
+    // let p2 = new Person("战三", 18);
+    //
+    //
+    //
+    // console.log(p instanceof Person)
+
+    // console.log(p)
+
+    // console.log(p.constructor.name);
+
+
+</script>
+
+
+<script type="text/html">
+
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 找到原型对象, 给它身上绑定属性
+    // 怎么访问到原型对象
+    // Person.prototype // ES 规定的, 官方
+    // p.__proto__ // 以后不要使用; 因为 __proto__, 不属于js语法规范所定义的属性, 而是, 浏览器, 为了方便我们开发人员调试, 给我们额外增加的!
+    Person.prototype.run = function () {
+        console.log(this.name, "跑!")
+    }
+
+    Person.prototype.eat = function () {
+
+    }
+
+    let p1 = new Person("sz", 18);
+    p1.run = function () {
+        console.log("我是p1")
+    }
+
+
+    let p2 = new Person("zs", 19);
+
+    p1.run()
+
+
+    // console.log(p1, p2)
+
+    // p1.run()
+    // p2.run()
+
+
+    console.log(p1, p2)
+
+
+</script>
+
+
+<script type="text/html">
+
+    // 1. 概念: 什么是原型对象
+    // 每当一个函数对象被创建的时候, 内部, 会有一个自带的属性: prototype
+    // 它的值, 是一个对象
+
+
+    // 原型对象的作用:
+    // 当一个对象, 在调用方法或者属性的时候, 会优先从自己身上查找
+    // 如果找到了, 那么就找到了
+    // 如果找不到, 那么就会沿着 __proto__ 找原型对象, 到原型对象身上来查找你想要找的东西
+
+    // function Person() {
+    //
+    // }
+    //
+    // let p = new Person()
+    // let p2 = new Person()
+    // console.log(p2.__proto__ === p.__proto__)
+
+    // console.log(p.constructor.name);
+
+
+    // let arr = ["a", "b", "c"];
+    //
+    // // arr.push("d");
+    // console.log(arr)
+
+
+</script>
+
+
+
+</body>
+</html>

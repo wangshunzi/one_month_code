@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-拷贝</title>
+</head>
+<body>
+
+
+<script>
+
+    let p = {
+        name: "Sz",
+        age: 18
+    }
+
+
+
+    let p2 =  JSON.parse(JSON.stringify(p))
+    console.log(p2)
+
+    // 对象 -> 字符串  (序列化)
+    // let str = JSON.stringify(p);
+    // console.log(typeof str)
+
+    // 字符串 -> 对象 (反序列化)
+    // let str = `{"name":"Sz","age":18}`
+    // let result = JSON.parse(str)
+    // console.log(result)
+
+
+
+    // let p2 = {}
+    // for (const pKey in p) {
+    //     // p2[pKey] = p[pKey];
+    //
+    //     // console.log(pKey, p[pKey])
+    //     p2[pKey] = p[pKey]
+    //
+    // }
+    //
+    // p2.addr = "上海"
+
+
+    // console.log(p);
+    // console.log(p2)
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-js-对象的创建</title>
+</head>
+<body>
+
+<script>
+
+    function createDog(name_v, age_v, addr_v) {
+        return {
+            name: name_v,
+            age : age_v,
+            address: addr_v
+        }
+    }
+
+
+    function createPerson(name_v, age_v, addr_v) {
+        return {
+            name: name_v,
+            age : age_v,
+            address: addr_v
+        }
+    }
+
+
+    let p1 = createPerson("sz", 18, "北京");
+    let d1 = createDog("小花", 2, "上海");
+
+    console.log(typeof p1,typeof d1)
+
+
+    let bl = 123
+    console.log(typeof bl);
+
+
+</script>
+
+
+
+
+</body>
+</html>

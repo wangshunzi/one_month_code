@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-函数扩展</title>
+</head>
+<body>
+
+<script type="text/html">
+    // 匿名函数
+    // 概念: 没有名字的函数, 称作 "匿名函数"
+
+
+
+    // 匿名函数的应用场景
+    // 1. 即时执行函数
+    // (function (num) {
+    //     console.log("这是一个加法函数", num)
+    // })(1)
+
+    // 2. 被传递给一些特定的函数来使用
+    // 当做参数, 传递给一个函数; (另外一个函数, 内部自动的来执行你所传递的函数)
+    // let arr = ["a", "b", "c"];
+    //
+    // arr.forEach(function (item) {
+    //     console.log("这是元素: ", item)
+    // })
+
+
+    //
+
+
+    // function fe(arr, callback) {
+    //     // arr ["a", "b", "c", "d"]
+    //     // callback 函数
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let val = arr[i];
+    //         callback(val)
+    //     }
+    //
+    // }
+    //
+    // fe(["a", "b", "c", "d"], function (item) {
+    //     console.log("这是一个元素", item)
+    // })
+
+
+
+    window.setInterval(function () {
+        console.log("xxx", Math.random())
+    }, 1000)
+
+
+
+
+
+
+</script>
+
+
+<script type="text/html">
+
+
+    // 递归调用的函数
+    // function test() {
+    //     console.log("xxx")
+    //     test()
+    // }
+    //
+    // test()
+
+
+    // 适合只知道, 规则  + 结束值的场景
+
+
+
+    // 9!
+    // 9 * 8!
+    // 9 * 8 * 7!
+    // 9 * 8 * 7 * 6!
+    // 9 * 8 * 7 * 6 * 5!
+    // 9 * 8 * 7 * 6 * 5 * 4!
+    // 9 * 8 * 7 * 6 * 5 * 4 * 3!
+    // 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2!
+    // 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1!
+    // 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+
+
+    // 假设, 你已经实现了一个函数jc(数值) => 对应的阶乘结果
+
+    // function jc(n) {
+    //     if(n === 1) {
+    //         return 1
+    //     }
+    //     return n * jc(n-1)
+    // }
+    //
+    // console.log(jc(4));
+
+    // 4 * jc(3)
+    // 4 * 3 * jc(2)
+    // 4 * 3 * 2 * jc(1)
+    // 4 * 3 * 2 * 1
+
+
+</script>
+
+
+
+<script>
+
+    // 监听dom对象的事件, 事件绑定
+    // 不同的浏览器, 绑定方式 不一样
+    // function addEvent(dom, type, handler){
+    //     if(dom.addEventListener){
+    //         dom.addEventListener(type, handler, false);
+    //     }else{
+    //         dom.attachEvent('on' + type, handler);
+    //     }
+    // }
+
+
+    // function addEvent(dom, type, handler){
+    //     if(dom.addEventListener){
+    //         dom.addEventListener(type, handler, false);
+    //         addEvent = function (dom, type, handler){
+    //             dom.addEventListener(type, handler, false);
+    //         }
+    //     }else{
+    //         dom.attachEvent('on' + type, handler);
+    //         addEvent = function (dom, type, handler){
+    //             dom.attachEvent('on' + type,  handler);
+    //         }
+    //     }
+    // }
+    //
+    // addEvent(1, 2, 3)
+
+
+    // function sum(x, y) {
+    //     return x + y;
+    // }
+    //
+    // console.log(sum(1, 2));
+
+    // function sum(x) {
+    //     return function (y) {
+    //         return x + y;
+    //     }
+    // }
+    //
+    // console.log(sum(3)(4));
+
+
+    // lg (以10为底的对数)
+
+
+    // function log(d, v) {
+    //     for (let i = 0; i < 1000; i++) {
+    //         if (d ** i === v) {
+    //             return i;
+    //         }
+    //     }
+    // }
+    //
+    //
+    // console.log(log(10, 10000));
+    //
+    // log(10, 100)
+    // log(10, 1000)
+    // log(10, 10000)
+    //
+    // log(2, 8)
+    // log(2, 16)
+    // log(2, 200)
+
+
+
+    function log(d) {
+        return function (v) {
+            for (let i = 0; i < 1000; i++) {
+                if (d ** i === v) {
+                    return i;
+                }
+            }
+        }
+    }
+
+    // console.log(log(10)(100));
+    // console.log(log(10)(1000));
+
+    let lg = log(10);
+
+    // console.log(lg(1000));
+    // console.log(lg(100));
+    // console.log(lg(10000));
+
+
+
+    let log2 = log(2);
+
+    console.log(log2(4));
+    console.log(log2(8));
+    console.log(log2(16));
+
+
+    // function (100) {
+    //     for (let i = 0; i < 1000; i++) {
+    //         if (10 ** i === 100) {
+    //             return i;
+    //         }
+    //     }
+    // }
+
+
+
+
+
+</script>
+
+</body>
+</html>

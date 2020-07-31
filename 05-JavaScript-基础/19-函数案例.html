@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-函数案例</title>
+</head>
+<body>
+
+
+<script type="text/html">
+
+    // 1) 请写出一个判断一个数是不是偶数的函数?
+
+    // IsEven
+    /**
+     * 判定一个数值, 是否是偶数
+     * @param num {number} 需要判定的数值参数
+     * @returns {boolean} 判定的结果; 是偶数: true; 是奇数: false; 错误参数: undefined
+     * @example isEven(2) => true
+     */
+    function isEven(num) {
+        // 1. 容错处理
+        num = +num
+        if (isNaN(num)) {
+            console.error("你传递的参数有问题, 请传递一个数值: ")
+            return;
+        }
+        // 数值没有问题, 参数
+        // return num % 2 === 0
+        return !(num % 2)
+        // if () {
+        //     return true
+        // }else {
+        //     return false
+        // }
+
+    }
+
+
+
+    if (isEven(3)) {
+        alert("xxx")
+    }
+
+
+
+
+
+</script>
+
+<script TYPE="text/html">
+
+    // 函数内部, 无法同时返回多个值
+
+    function circleZCMJ(r) {
+        let ZC = 2 * Math.PI * r;
+        let MJ = Math.PI * r * r;
+
+        // console.log(ZC, MJ);
+        return [ZC, MJ];
+        // return ZC, MJ;
+    }
+
+    console.log(circleZCMJ(3));
+
+
+</script>
+
+
+<script>
+
+    // function reverseArray(arr) {
+    //     // arr == ["a", "b"]
+    //     // length = 2
+    //     // 0 1
+    //
+    //     // let result = [];
+    //     // for (let i = arr.length - 1; i >= 0; i--) {
+    //     //     // console.log(arr[i])
+    //     //     result.push(arr[i])
+    //     // }
+    //     let result = [];
+    //     for (let i = 0; i < arr.length; i++) {
+    //         // console.log(arr[i]);
+    //         result.unshift(arr[i])
+    //     }
+    //
+    //     return result;
+    //
+    // }
+    //
+    //
+    // let arr = ["a", "b", "c", "d"]
+    // let result = reverseArray(arr);
+    //
+    // console.log(result, arr)
+
+
+    function reverseArray(arr_param) {
+        // arr_param.push(123)
+
+        //   0    1    2    3   4    5
+        // ["a", "b", "c", "d", "e", "f"]
+
+        // 0 5; 1 4; 2 3
+
+        let times = Math.floor(arr_param.length / 2)
+        let len = arr_param.length - 1;
+        for (let i = 0; i < times; i ++) {
+            // console.log(i , len - i);
+
+            let temp = arr[i];
+            arr[i] = arr[len - i];
+            arr[len - i] = temp;
+        }
+
+    }
+
+
+    let arr = ["a", "b", "c", "d", "e", "f", "g"]
+    reverseArray(arr);
+    console.log(arr);
+
+
+</script>
+
+</body>
+</html>

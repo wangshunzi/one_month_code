@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-面向对象编程</title>
+</head>
+<body>
+
+
+<script>
+
+
+    // 加减乘除
+
+    // 链式编程
+
+    function Caculator(initValue) {
+        this.result = initValue;
+    }
+    Caculator.prototype = {
+        constructor: Caculator,
+        add: function (num) {
+            this.result += num
+            return this;
+        },
+        jian: function (num) {
+            this.result -= num
+            return this;
+        },
+        cheng: function (num) {
+            this.result *= num
+            return this;
+        },
+        chu: function (num) {
+            this.result /= num
+            return this;
+        },
+        clear: function () {
+          this.result = 0;
+          return this;
+        },
+        log: function () {
+            console.log("计算的结果是:", this.result)
+        }
+    }
+
+
+    let ca1 = new Caculator(0)
+    ca1.add(2).jian(1).cheng(2).chu(2).jian(2).log();
+    ca1.clear()
+
+    // console.log(ca1.result);
+
+
+</script>
+
+
+
+<script type="text/html">
+
+
+    let baidu = {
+        name: "百度",
+        show: function () {
+            console.log(this.name, "地图被渲染了")
+        }
+    }
+
+    let google = {
+        name: "谷歌",
+        show: function () {
+            console.log(this.name, "地图被渲染了")
+        }
+    }
+
+
+
+
+    function render(map) {
+        map.show()
+    }
+
+
+    render(baidu)
+
+    render(google)
+
+
+
+
+
+    // let caculator = {
+    //     add: function add() {
+    //
+    //     },
+    //     cheng: function cheng() {
+    //
+    //     },
+    //     jia: function jia() {
+    //
+    //     }
+    // }
+    //
+    //
+    // caculator.cheng()
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-继承</title>
+</head>
+<body>
+
+<script>
+
+    // 本质
+    // ES6 class  语法糖; 我们开发人员 使用 好用的语法, 来实现继承, 类的定义;(内部的真实实现, 还是这一套)
+    // 继承是完成了什么操作? (把父类的实例属性, 原型对象上面方法)
+    // 理解
+    function extend(child, parent) {
+        function Temp() { }
+        Temp.prototype = parent.prototype
+        let t = new Temp()
+        t.constructor = child;
+        child.prototype = t;
+    }
+
+
+
+    function Animal(height, weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+    Animal.prototype.run = function () {
+        console.log("跑", this)
+    }
+
+    extend(Dog, Animal)
+
+    function Dog(height, weight, color) {
+        Animal.call(this, height, weight)
+        this.color = color;
+    }
+
+
+
+    function Hsq(height, weight, color, zhishang) {
+        Dog.call(this, height, weight, color)
+        this.zhishang = zhishang;
+    }
+
+    extend(Hsq, Dog)
+
+    let erha = new Hsq(60, 190, "花", 0);
+    erha.run()
+    console.log(erha.constructor.name);
+
+
+</script>
+
+
+
+<script type="text/html">
+
+    function Animal(height, weight) {
+        console.log(this)
+        this.height = height;
+        this.weight = weight;
+        this.name = "xxxx";
+    }
+
+    let animal = new Animal(180, 50)
+    console.log(animal)
+
+
+    function Dog(height, weight, color) {
+        Animal.call(this, height, weight)
+        this.color = color;
+    }
+
+    let dog = new Dog(170, 20, "red");
+    console.log(dog);
+
+
+</script>
+
+
+<script type="text/html">
+
+    function Animal() {
+        this.height = 180;
+        this.weight = 160;
+    }
+    Animal.prototype.run = function () {
+        console.log("跑")
+    }
+
+
+
+    function Dog() {
+
+    }
+
+
+    let dog = new Dog();
+    dog.run()
+
+
+
+
+</script>
+
+
+<script type="text/html">
+
+    let animal = {
+        height: 180,
+        weight: 160,
+        color: "red"
+    }
+
+
+    let person = {
+        height: 180,
+        weight: 160,
+        name: "sz",
+        run: function () {
+
+        }
+    }
+
+    let stu = {
+        height: 180,
+        weight: 160,
+        name: "sz",
+        run: function () {
+
+        },
+        num: "001"
+    }
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

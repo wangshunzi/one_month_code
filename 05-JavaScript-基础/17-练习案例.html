@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-练习案例</title>
+</head>
+<body>
+
+
+<script type="text/html">
+
+    // 0. 定义两个数组
+    let js_arr = [];
+    let os_arr = [];
+
+    while (true) {
+
+        // 1. 接收用户输入的内容
+        let content = prompt("请输入内容");
+
+        // 2. 判定内容, 是否是 exit
+        if (content === "exit") {
+            // 2.1 是 -> 退出循环(break)
+            break;
+        }
+        // 2.2 不是
+        // 接着判定, 是奇数, 偶数 - > 两个数组
+        content = +content;
+        if (isNaN(content)) {
+            console.warn("请输入数值, 不要瞎输");
+            continue
+        }
+        // 肯定是一个数值
+        if (content % 2 === 0) {
+            // 偶数
+            os_arr.push(content)
+        } else {
+            // 奇数
+            js_arr.push(content)
+        }
+    }
+
+    console.log(js_arr);
+    console.log(os_arr);
+
+
+</script>
+
+
+<script>
+    let arr =  [0,"刘备",0, 0,"关羽",0,0,0,"张飞",0];
+
+
+
+    // while (true) {
+    //     let index = arr.indexOf(0)
+    //     if (index === -1) {
+    //         // 数组当中不存在 0
+    //         break;
+    //     }
+    //     arr.splice(index, 1)
+    // }
+    //
+    // console.log(arr);
+
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     // console.log(arr[i], i);
+    //     if (arr[i] === 0) {
+    //         // 删除这个元素
+    //         arr.splice(i, 1)
+    //         i--;
+    //     }
+    // }
+    //
+    // console.log(arr)
+
+
+
+</script>
+
+</body>
+</html>

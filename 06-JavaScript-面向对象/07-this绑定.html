@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-this绑定</title>
+</head>
+<body>
+
+
+<script>
+
+    let obj = {
+        0: "a",
+        1: "b",
+        length: 2
+    }
+
+
+    // let arr = ["a", "b", "c"]
+    // arr.push("c")
+
+    // function push(item) {
+    //     // arr[2] = "c"
+    //     this[this.length] = item;
+    //     this.length ++
+    // }
+    //
+    // Array.prototype.push.call(obj, "c")
+    // console.log(obj);
+
+
+    // let arr = ["a", "b"];
+    //
+    // // push : 内部, 肯定是往 this 身上做操作
+    // arr.push("c")
+    // console.log(arr);
+
+
+    // function test(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    //
+    //
+    // let obj = {}
+
+    // 1. 执行 test 函数
+    // 2. 执行的同时, 设定函数内部的this  obj
+    // 3. 同时传递参数, 给到这个函数
+    // name "sz", age : 18
+    // test.call(obj, "sz", 18)
+    // test.apply(obj, ["sz", 18])
+    // console.log(obj);
+
+
+    // function test() {
+    //     console.log(this)
+    // }
+    //
+    // let a = {a: 123}
+
+    // bind
+    // 强行的绑定函数的 this 指向,
+    // 被绑定this 的 新函数
+    // let t = test.bind(a)
+
+    // function t() {
+    //     this = a
+    //     console.log(this)
+    // }
+
+    // let person = {
+    //     name: "sz",
+    //     run: t
+    // }
+    //
+    // person.run()
+
+
+    // let person = {
+    //     name: "sz",
+    //     run: test
+    // }
+    //
+    //
+    // person.run()
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-js-对象概念</title>
+</head>
+<body>
+
+
+<div id="box">
+
+</div>
+
+
+<script type="text/html">
+
+    // 以怎样的方式, 来描述一个物体(对象)
+
+    // let personInfo = "sz,18,180,这人,是一个好人";
+    //
+    // // ["a", "b"].join("-") "a-b"
+    //
+    // // console.log(personInfo.split(",")[]);
+
+
+    // let personInfo = ["sz", 18, 180, "这人, 是一个好人"];
+    // console.log(personInfo[1]);
+
+
+    // 函数和方法
+    // let personInfo = {
+    //     name: "sz",
+    //     age: 18,
+    //     height: 180,
+    //     intro: "这人, 是一个好人",
+    //     isNan: true,
+    //     run: function () {
+    //         console.log("跑了!")
+    //     }
+    // }
+    //
+    //
+    // personInfo.run()
+
+    // let person = {}
+    //
+    // person = {
+    //     name: "Sz",
+    //     age: 18
+    // }
+
+    // let person = new Object()
+
+    // let person = {name: "Sz", age: 19};
+
+
+
+    // let name = "123"
+
+    // console.log(person["name"]);
+    // console.log(person.age);
+
+    // let keys = ["name", "age"];
+    // for (let i = 0; i < keys.length; i++) {
+    //     // console.log(keys[i]);
+    //
+    //     // "name" "age"
+    //     let key = keys[i];
+    //     console.log(person[key])
+    //
+    //
+    // }
+
+
+
+
+    // person.name = "sz";
+    // person.age = 18;
+    // person.address = "上海"
+    //
+    //
+    //
+    // console.log(person)
+
+
+</script>
+
+
+
+<script type="text/html">
+    let person = {name: "xxx"};
+
+    person.name = "sz";
+    person.age = 18;
+    person["height"] = 180;
+
+    person.name = "zs";
+
+    // console.log(person.age2)
+    // console.log(person["name1"]);
+
+
+    // let keys = Object.keys(person)
+    // console.log(keys);
+
+
+    // "name" "age" "height"
+    // for (let i = 0; i < keys.length; i++) {
+    //     let key = keys[i];
+    //     console.log(key, person[key])
+    // }
+
+
+    // let values = Object.values(person)
+    // console.log(values)
+
+
+    for (let personKey in person) {
+        console.log(personKey, person[personKey]);
+    }
+
+</script>
+
+<script type="text/html">
+
+    let zsPerson = {
+        name: "zs",
+        age : 18,
+        address: "北京",
+        height: 190
+    }
+
+    console.log(zsPerson)
+
+
+    let szPerson = {
+        name: "sz",
+        age: 19,
+        address: "内蒙",
+        height: 180
+    }
+
+    console.log(szPerson)
+
+
+
+</script>
+
+
+</body>
+</html>

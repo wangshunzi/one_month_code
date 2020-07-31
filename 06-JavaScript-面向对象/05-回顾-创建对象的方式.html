@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方式</title>
+</head>
+<body>
+
+<script>
+
+    // function createPerson(name, age) {
+    //     return {
+    //         name: name,
+    //         age: age
+    //     }
+    // }
+    //
+    //
+    // let p1 = createPerson("sz", 18);
+    // let p2 = createPerson("sz", 19);
+    // let p3 = createPerson("sz", 18);
+    // let p4 = createPerson("sz", 18);
+    //
+    // let d1 = {name: "小花", age: 2};
+    //
+    // console.log(p1, p2, p3, d1)
+
+
+
+
+    // 自定义构造函数
+
+    let runFunc = function () {
+        // this
+        // 一般情况: 谁调用这个函数, 函数内部的this, 就是谁!
+        // new 关键字, 调用这个函数: this, 创建空白对象
+        console.log(this.name, "跑")
+    };
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.run = runFunc
+
+        // if (Person === null) {
+        //     console.log("拿不着")
+        // }
+
+        // undefined
+        // 0
+        if (Person.count === undefined) {
+            Person.count = 1;
+        } else {
+            Person.count++
+        }
+
+        // console.log(Person.count, Person)
+
+    }
+
+
+
+    // console.dir(Person)
+
+    let p1 = new Person("sz", 18)
+    let p2 = new Person("zs", 19)
+
+    console.log(Person.count);
+
+
+    // console.log(count)
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
