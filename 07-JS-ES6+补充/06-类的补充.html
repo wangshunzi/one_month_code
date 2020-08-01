@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+</head>
+<body>
+
+
+<script>
+
+
+    class Animal {
+        constructor(height, weight) {
+            this.height = height;
+            this.weight = weight;
+            this.xxx = 123;
+        }
+        run() {
+           console.log("跑")
+        }
+        static count = 10;
+    }
+
+    // let animal = new Animal(180, 50);
+    // console.log(animal);
+
+
+    class Dog extends Animal {
+        constructor(name, height, weight) {
+            // super(); 调用父类的构造函数
+            super(height, weight);
+            this.name = name;
+        }
+
+        run() {
+            console.log("小狗")
+            // super.run();
+        }
+    }
+
+    let dog = new Dog("小花", 120, 10);
+    console.log(dog);
+    dog.run()
+
+
+</script>
+
+
+<script type="text/html">
+
+    //
+    // function Person() {
+    //     this.age = 18
+    // }
+    // Person.prototype.run = function () {
+    //     console.log("跑")
+    // }
+
+    // Person.age = 19
+    // Person.run = function () {
+    //
+    // }
+
+
+    // 实例属性/方法
+    // 静态属性/方法
+    // 原型对象属性和方法
+
+    // class Person {
+    //     // 构造函数
+    //     constructor(age, addr) {
+    //         // this => 外界创建的空白对象 p
+    //         this.age = age
+    //         this.addr = addr
+    //     }
+    //     addr="上海"
+    //
+    //     // run= function() {
+    //     //     console.log("123跑")
+    //     // }
+    //
+    //     // 正确
+    //     // run() {
+    //     //     console.log("123跑")
+    //     // }
+    //
+    //     // static num = 10
+    //     // static addxx() {
+    //     //
+    //     // }
+    //
+    // }
+    //
+    // console.dir(Person)
+
+    // let p = new Person(19, "上海2")
+    // //
+    // console.log(p);
+
+
+</script>
+
+
+</body>
+</html>

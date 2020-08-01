@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皮肤切换</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="box">
+    <ul class="bg">
+        <li class="current"><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+    </ul>
+    <ul class="tab">
+        <li class="current"><img src="images/s1.jpg" alt=""></li>
+        <li><img src="images/s2.jpg" alt=""></li>
+    </ul>
+</div>
+
+
+<script>
+    window.onload = function () {
+        let tabs = document.querySelectorAll(".tab>li");
+        let bgs = document.querySelectorAll(".bg>li");
+        for (let i = 0; i < tabs.length; i++) {
+            let tab = tabs[i];
+            let bg = bgs[i]
+            tab.onmouseover = function () {
+                for (let j = 0; j < tabs.length; j++) {
+                    tabs[j].className = "";
+                    bgs[j].className = "";
+                }
+                tab.className = "current";
+                bg.className = "current";
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

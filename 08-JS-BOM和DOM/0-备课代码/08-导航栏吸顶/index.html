@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏吸顶效果</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="nav">
+    这是导航栏
+</div>
+
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+<p>内容内容</p>
+
+<script>
+    let body = document.body;
+    let nav = document.getElementsByClassName("nav")[0];
+    body.onscroll = function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        // console.log(scrollTop)
+        if (scrollTop > 100) {
+            nav.style.top = "0px";
+        }
+        if (scrollTop < 10) {
+            nav.style.top = "-55px";
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

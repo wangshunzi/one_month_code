@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片放大镜</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="box">
+    <div class="big">
+        <img src="images/l1.jpg" alt="">
+    </div>
+    <div class="container">
+        <img src="images/m1.jpg" alt="">
+        <div class="mask"></div>
+    </div>
+    <div class="tab">
+        <ul>
+            <li class="active"><img src="images/s1.jpg" alt="1"></li>
+            <li><img src="images/s2.jpg" alt="2"></li>
+            <li><img src="images/s3.jpg" alt="3"></li>
+            <li><img src="images/s4.jpg" alt="4"></li>
+            <li><img src="images/s5.jpg" alt="5"></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        // 切换图片逻辑
+        let tabs = document.querySelectorAll(".tab>ul>li");
+        let bigImg = document.querySelector(".big>img");
+        let middleImg = document.querySelector(".container>img");
+
+        for (let i = 0; i < tabs.length; i++) {
+            let tab = tabs[i];
+            tab.onmouseover = function () {
+                middleImg.src = `images/m${i+1}.jpg`;
+                bigImg.src = `images/l${i+1}.jpg`;
+                tabs.forEach(item=>item.className="")
+                tab.className = "active";
+            }
+        }
+
+
+        // 蒙版跟随的逻辑
+        let box = document.querySelector(".box");
+        let box_offsetLeft = box.offsetLeft;
+        let box_offsetTop = box.offsetTop;
+        let container = document.querySelector(".container");
+        let container_w = container.offsetWidth;
+        let container_h = container.offsetHeight;
+        let mask = document.querySelector(".mask");
+        let big = document.querySelector(".big");
+
+        container.onmouseover = function () {
+            mask.style.display = "block";
+            big.style.display = "block";
+        }
+        container.onmouseout = function () {
+            mask.style.display = "none";
+            big.style.display = "none";
+        }
+
+
+        container.onmousemove = function (e) {
+            // console.log(e);
+            let left_v = e.clientX - box_offsetLeft - mask.offsetWidth / 2;
+            let top_v = e.clientY - box_offsetTop - mask.offsetHeight / 2;
+
+            if (left_v < 0) {
+                left_v = 0;
+            } else if (left_v > container_w - mask.offsetWidth) {
+                left_v = container_w - mask.offsetWidth;
+            }
+            if (top_v < 0) {
+                top_v = 0;
+            } else if (top_v > container_h - mask.offsetHeight) {
+                top_v = container_h - mask.offsetHeight;
+            }
+
+            // console.log(left_v, top_v)
+            mask.style.left = left_v + "px";
+            mask.style.top = top_v + "px";
+
+            // 计算映射到大图移动的比例
+            let big_left_v = - left_v / (container_w - mask.offsetWidth) * (bigImg.offsetWidth - big.offsetWidth)
+            let big_top_v = - top_v / (container_h - mask.offsetHeight) * (bigImg.offsetHeight - big.offsetHeight);
+            bigImg.style.left = big_left_v + "px";
+            bigImg.style.top = big_top_v + "px";
+
+
+        }
+
+    }
+</script>
+
+</body>
+</html>

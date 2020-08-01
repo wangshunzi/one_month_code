@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码显示隐藏</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="box">
+    <img src="images/e_coder_normal.png" alt="" class="small">
+    <div class="pane">
+        <img src="images/sz.jpg" alt="">
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        let box = document.getElementsByClassName("box")[0];
+        let pane = document.getElementsByClassName("pane")[0];
+        let small = document.getElementsByClassName("small")[0];
+        box.onmouseover = function () {
+            pane.style.display = "block";
+            small.src = "images/e_coder_selected.png"
+        }
+        box.onmouseleave = function () {
+            pane.style.display = "none";
+            small.src = "images/e_coder_normal.png"
+        }
+    }
+</script>
+
+
+</body>
+</html>

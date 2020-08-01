@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机广告</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="box">
+        <img src="images/kongtiao.webp" alt="" class="ad_img">
+        <div class="close">
+            <img src="images/close.png" alt="">
+        </div>
+    </div>
+
+<script>
+
+
+    window.onload = function () {
+
+        let ad_image = document.getElementsByClassName("ad_img")[0];
+        let images = ["kongtiao.webp", "lianxiang.webp", "nf.webp", "shouji.jpg", "win10.webp", "xiaomi.webp"]
+        // 设置随机广告图片
+        let random = Math.round(Math.random() * (images.length - 1))
+        let image_src = `images/${images[random]}`
+        ad_image.src = image_src;
+
+        // 设置效果
+        let box = document.getElementsByClassName("box")[0];
+        let close_btn = document.getElementsByClassName("close")[0];
+        close_btn.onclick = function () {
+            box.style.display = "none";
+        }
+        setTimeout(function () {
+            box.style.bottom = "10px";
+        }, 500)
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-回顾</title>
+</head>
+<body>
+
+<script>
+
+    class Person {
+        // static count = 0;
+        // static log() {
+        //     console.log("当前创建的实例个数: ", Person.count)
+        // }
+        constructor(name, age) {
+            // this
+            this.name = name;
+            this.age = age;
+
+            // Person.count ++;
+
+        }
+        run() {
+           console.log(this.name, "跑")
+        }
+    }
+
+
+    // 继承
+    // 继承什么? 父类的实例属性, 原型对象身上的所有方法
+
+    class Stu extends Person {
+        constructor(name, age, num) {
+            super(name, age);
+            this.num = num;
+        }
+        study() {
+            console.log("学习")
+        }
+    }
+    let stu = new Stu("小花", 16, "001");
+    stu.run();
+    stu.study()
+
+
+    // let p = new Person("sz", 19)
+    // let p2 = new Person("zs", 18)
+    //
+    //
+    // Person.log()
+
+
+
+</script>
+
+
+
+<script type="text/html">
+
+    // let arr = [1,2,3]
+    // let [a, ,c] = arr;
+
+
+    let obj = {name: "sz", age: 18, addr: "上海"};
+    let {name, age} = obj
+    console.log(name, age)
+
+
+    function minOrMax(type, ...nums) {
+        // console.log(type, nums)
+        if (type.toLowerCase() === "min") {
+            return Math.min(...nums)
+        } else if (type.toLowerCase() === "max") {
+            return Math.max(...nums)
+        }
+    }
+
+
+    console.log(minOrMax("Min", 1, 2, 3, 4, 0));
+    console.log(minOrMax("mAx", 5, 3, 4));
+
+
+    // function min() {
+    //     // 保存的内容
+    //     // [10, 109, 999, 12]
+    //     console.log(arguments);
+    //     console.log(Math.min(...arguments));
+    //
+    //     // 借助 Math.min()
+    // }
+    // min(10, 109, 999, 12);
+
+    // function test(a, b) {
+    //     return a + b;
+    // }
+    //
+    // let func = (a,b) => a + b;
+    //
+    // console.log(func(1, 2));
+
+    // let name = "张三"
+    // let age = 22
+    //
+    // let obj = {
+    //     name,
+    //     age
+    // }
+    //
+    // console.log(obj);
+
+
+    // let arr = [1,2,3];
+    // // 遍历数组的     每个元素(, 都会去执行你所传递的函数(元素))
+    // arr.forEach(function (val) {
+    //     console.log("xxx", val)
+    // })
+
+</script>
+
+
+
+</body>
+</html>

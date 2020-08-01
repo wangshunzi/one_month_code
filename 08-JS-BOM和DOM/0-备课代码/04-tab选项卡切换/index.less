@@ -1,0 +1,65 @@
+.box {
+  width: 604px;
+  height: 342px;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: fit-content;
+      display: flex;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 300ms linear;
+      li {
+        a {
+          display: block;
+          width: 604px;
+          height: 298px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+      }
+    }
+  }
+
+  .tab {
+    height: 44px;
+    background-color: rgb(44, 44, 52);
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+
+      li {
+        flex: 1;
+        cursor: pointer;
+        text-align: center;
+        color: #b1b2be;
+        line-height: 44px;
+        background-color: rgb(44, 44, 52);
+        font-size: 14px;
+
+        &.active,
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          color: #f3c258;
+        }
+      }
+    }
+  }
+}

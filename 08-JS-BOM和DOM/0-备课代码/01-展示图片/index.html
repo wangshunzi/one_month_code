@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="box">
+        <img id="image" src="images/1.png" alt="">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+
+<script>
+    let currentIndex = 1;
+    function pre() {
+        currentIndex --;
+        if (currentIndex === 0) {
+            currentIndex = 13
+        }
+        return `images/${currentIndex}.png`;
+    }
+    function next() {
+        currentIndex ++;
+        if (currentIndex === 14) {
+            currentIndex = 1
+        }
+        return `images/${currentIndex}.png`;
+    }
+
+    window.onload = function () {
+        let image = document.getElementById("image");
+        let left_dom = document.getElementsByClassName("left")[0];
+        let right_dom = document.getElementsByClassName("right")[0];
+
+        left_dom.onclick = () => image.src = pre();
+        right_dom.onclick =  () => image.src = next();
+    }
+</script>
+
+</body>
+</html>

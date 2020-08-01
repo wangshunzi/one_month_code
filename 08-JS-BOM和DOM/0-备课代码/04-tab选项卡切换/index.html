@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab选项卡切换</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="box">
+    <div class="container">
+        <ul>
+            <li><a href="#"><img src="images/1.jpeg" alt="1"></a></li>
+            <li><a href="#"><img src="images/2.jpeg" alt="2"></a></li>
+            <li><a href="#"><img src="images/3.jpeg" alt="3"></a></li>
+            <li><a href="#"><img src="images/4.jpeg" alt="4"></a></li>
+            <li><a href="#"><img src="images/5.jpeg" alt="5"></a></li>
+        </ul>
+    </div>
+    <div class="tab">
+        <ul>
+            <li class="active">投稿倒计时</li>
+            <li>周边上新抽皮肤</li>
+            <li>世冠夏令营</li>
+            <li>世冠淘汰赛分组</li>
+            <li>一往无前的电竞人</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    window.onload = function () {
+        let container_w = document.getElementsByClassName("container")[0].offsetWidth;
+        let container_ul = document.querySelector(".container>ul");
+        let tab_lis = document.querySelectorAll(".tab>ul>li");
+        for (let i = 0; i < tab_lis.length; i++) {
+            let tab_li = tab_lis[i];
+            tab_li.onmouseover = function () {
+                container_ul.style.left = - container_w * i + "px";
+                tab_lis.forEach(item=>{
+                    item.className = ""
+                })
+                tab_li.className = "active";
+            }
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

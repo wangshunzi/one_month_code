@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>长图浏览</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div id="box">
+    <img id="pic" src="images/timg.jpg" alt="">
+    <span id="to_top"></span>
+    <span id="to_bottom"></span>
+</div>
+
+<script>
+    window.onload = function () {
+
+        let top = document.getElementById("to_top");
+        let bottom = document.getElementById("to_bottom");
+        let pic = document.getElementById("pic");
+        let box = document.getElementById("box")
+        let currentTop = pic.style.top;
+        let currentTimer;
+
+
+        top.onmouseover = function () {
+            currentTimer = setInterval(function () {
+                if (currentTop < box.offsetHeight - pic.offsetHeight) {
+                    clearInterval(currentTimer);
+                    pic.style.top = box.offsetHeight - pic.offsetHeight + "px";
+                    return;
+                }
+                currentTop -= 2;
+                pic.style.top = currentTop + "px";
+            }, 10)
+        }
+        top.onmouseleave = function () {
+            clearInterval(currentTimer)
+        }
+
+        bottom.onmouseover = function () {
+            currentTimer = setInterval(function () {
+                if (currentTop > 0) {
+                    clearInterval(currentTimer);
+                    pic.style.top = "0px";
+                    return;
+                }
+                currentTop += 2;
+                pic.style.top = currentTop + "px";
+            }, 10)
+        }
+        bottom.onmouseleave = function () {
+            clearInterval(currentTimer)
+        }
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

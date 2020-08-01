@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-数组补充</title>
+</head>
+<body>
+
+
+<script>
+    let arr = [
+        {name: "Sz", age: 18},
+        {name: "李四", age: 19},
+        {name: "王五", age: 17},
+        {name: "赵六", age: 18}
+    ]
+
+    let ageFunc = function (item) {
+        // {name: "Sz", age: 18}
+        return item.age >= 18
+    }
+
+
+    let arr2 = [2, 4, 5, 6, 7];
+
+    let joFunc = function (item) {
+        return item % 2 === 0
+    }
+
+
+    Array.prototype.my_filter = function (cb) {
+        // this
+        let result = [];
+        // 2. 遍历数组
+        for (let i = 0; i < this.length; i++) {
+            // 拿到每个元素
+            // {name: "Sz", age: 18},
+            // 2 4 5 6 7
+            let item = this[i];
+
+            let isTrue = cb(item)
+            // 要留下: item => result
+            if (isTrue) {
+                result.push(item)
+            }
+        }
+        return result
+    }
+
+    console.log(arr.my_filter(ageFunc));
+
+    console.log(arr2.my_filter(joFunc));
+
+
+    //
+    // Array.prototype.my_filter2 = function () {
+    //     // this
+    //     let result = [];
+    //     // 2. 遍历数组
+    //     for (let i = 0; i < this.length; i++) {
+    //         // 拿到每个元素
+    //         let item = this[i];
+    //         let isTrue = item % 2 === 0
+    //         // 要留下: item => result
+    //         if (isTrue) {
+    //             result.push(item)
+    //         }
+    //     }
+    //     return result
+    // }
+    //
+    //
+    // let arr2 = [2, 4, 5, 6, 7]
+    // // 过滤 偶数
+    // console.log(arr2.my_filter2());
+
+
+    // let f_func = function (v) {
+    //     if (v.age >= 19) {
+    //         return true
+    //     }
+    // }
+    //
+    // arr.my_filter(f_func);
+</script>
+
+
+<script type="text/html">
+
+    let arr = [
+        {name: "Sz", age: 18},
+        {name: "李四", age: 19},
+        {name: "王五", age: 17},
+        {name: "赵六", age: 18}
+    ]
+
+
+    Array.prototype.my_filter = function (cb) {
+        // this == 数组
+
+        // 1. 定义一个空白的数组: 用于盛放, 筛选满足条件的结果
+        let result = [];
+
+        // 2. 遍历数组
+        for (let i = 0; i < this.length; i++) {
+            // 拿到每个元素
+            let item = this[i];
+            // console.log(item)
+
+            // 将元素, 传递给, 外面的判定函数
+            // 判定函数 -> 要不要留下
+            let isTrue = cb(item, i, this)
+
+            // 要留下: item => result
+            if (isTrue) {
+                result.push(item)
+            }
+        }
+
+        return result
+
+        //   2.1 item => 要不要留下来
+        //   cb(item) => 要不要留下来
+        //    要留下来 => 往空白数组里面, 追加这个元素
+
+        // 3. 直接返回, 新数组
+    }
+
+
+    // 过滤规则函数
+    let f_func = function (v) {
+        // v 要不要留下
+        if (v.age >= 19) {
+            return true
+        }
+    }
+
+    console.log(arr.my_filter(f_func));
+
+
+    //
+    // arr.filter(function (v) {
+    //     return v.age >= 18
+    // })
+
+
+
+    // console.log(arr.filter(v => v.age >= 18));
+
+    // arr.forEach()
+
+
+    //          [1, 4, 9, 16]
+    // let result = [1,2,3,4].map(
+    //     function (v, i, arr) {
+    //         console.log(v, i, arr)
+    //         return true;
+    //     }
+    // )
+    // console.log(result)
+
+
+    // arr.forEach((item, index, arr)=>{
+    //     console.log(item, index, arr)
+    // })
+
+
+
+</script>
+
+
+<script type="text/html">
+
+
+
+
+    // 第一个: 元素本身
+    // 第二个: 对应的索引
+    // 第三个: 整个数组
+    // arr.find(function (v, i, arr2, aa) {
+    //     console.log(v, i, arr2, aa)
+    // })
+
+
+    // function my_find(arr, cb) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let obj = arr[i];
+    //         let isTrue = cb(obj, i, arr)
+    //         if (isTrue) {
+    //             return obj;
+    //         }
+    //     }
+    // }
+
+
+    let arr = [
+        {name: "Sz", age: 18},
+        {name: "李四", age: 19},
+        {name: "王五", age: 17},
+        {name: "赵六", age: 18}
+    ]
+
+    Array.prototype.my_find = function (cb) {
+        for (let i = 0; i < this.length; i++) {
+            let obj = this[i];
+            let isTrue = cb(obj, i, this)
+            if (isTrue) {
+                return obj;
+            }
+        }
+    }
+
+    let result = arr.my_find(function (item, index, arr) {
+        console.log(item, index, arr)
+        return item.name === "王五"
+    })
+
+    console.log(result)
+
+
+
+    // console.log(my_find(arr, function (item, index, arr) {
+    //     return item.name === "Sz"
+    // }));
+
+
+    // let findPerson = arr.find(p=>p.name==="王五");
+
+    // let findPerson = arr.find(function (person) {
+    //     // console.log(person)
+    //     // return true
+    //     return person.name === "王五"
+    //     // undefined
+    //     // false
+    // });
+
+    // console.log(findPerson);
+
+    // 函数
+    // (v)
+
+    // arr.find(person=>{
+    //
+    // })
+
+
+
+
+
+
+
+
+    // function searchPerson(name) {
+    //     // 给定一个名字, 检索出对应的学生信息
+    //     for (let i = 0; i < arr.length; i++) {
+    //         let person = arr[i];
+    //         // console.log(person)
+    //         if (person.name === name) {
+    //             return person;
+    //         }
+    //     }
+    // }
+    //
+    // console.log(searchPerson("王五"));
+
+
+</script>
+
+
+
+</body>
+</html>

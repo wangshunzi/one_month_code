@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论发表</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div class="box">
+    <textarea class="content" placeholder="请输入评论内容, 回车结束"></textarea>
+    <ul class="items">
+        <li>占位内容</li>
+        <li>占位内容</li>
+        <li>占位内容</li>
+    </ul>
+
+</div>
+
+<script>
+
+    window.onload = function () {
+
+        let contentDOM = document.getElementsByClassName("content")[0];
+        let itemsDOM = document.getElementsByClassName("items")[0];
+        contentDOM.onkeydown = function (e) {
+            let key = e.key;
+            if (key === "Enter") {
+                e.preventDefault()
+                let v = contentDOM.value;
+                let li = document.createElement("li");
+                li.innerText = v;
+                // itemsDOM.appendChild(li);
+                itemsDOM.prepend(li)
+                contentDOM.value = ""
+            }
+        }
+
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

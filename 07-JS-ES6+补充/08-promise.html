@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-promise</title>
+</head>
+<body>
+
+
+<script type="text/html">
+
+    // 同步: 阻塞式代码 上面一行执行完毕之后, 才会执行下一行
+    // 异步: 非阻塞, 不会等待, 会继续执行后续代码
+
+
+    // console.log("aaa")
+
+    // for (let i = 0; i < 100000; i++) {
+    //     console.log("xxx")
+    // }
+
+    // setTimeout(function () {
+    //     console.log("bbb")
+    // },0)
+    //
+    // console.log("ccc")
+
+    //
+    // console.log("aaa");
+    //
+    // // 发送了一个而网络请求
+    // // 异步
+    // setTimeout(function () {
+    //     console.log("处理网络请求的结果")
+    // }, 5000)
+    //
+    // console.log("bbb")
+
+
+</script>
+
+
+<script type="text/html">
+
+    // pending
+    // 成功   => then
+    // 失败   => catch
+    // new Promise(function (resolve, reject) {
+    //     // 调用resolve , 就会把promise状态 -> 成功
+    //     // reject , promise 状态  -> 失败
+    //     reject(123)
+    //
+    // }).then(res=>{
+    //     console.log("成功", res)
+    // }).catch(err=>{
+    //     console.log("失败", err)
+    // })
+
+
+
+    // 2s ==> "aaa"; 1 => "bbb" 2 ==> "ccc"
+
+    // 回调地狱
+    // 不会导致程序崩溃问题
+    // 引发的问题: 我们作为开发人员, 不好理解代码思路, 不好维护
+    let result = ""
+    setTimeout(function () {
+        result += "aaa"
+        setTimeout(function () {
+            result += "bbb"
+            setTimeout(function () {
+               result += "ccc"
+                console.log(result)
+            }, 2000)
+        }, 1000)
+    }, 2000)
+
+
+    // Promise
+
+    // let promise = new Promise(function (resolve, reject) {
+    //
+    //
+    //     setTimeout(function () {
+    //         console.log("aaa")
+    //     }, 2000)
+    //
+    //
+    //
+    // })
+
+
+
+</script>
+
+
+<script>
+
+    function judgeNum() {
+            return new Promise(function (resolve, reject) {
+                //  发送网络请求, 3s之后回来结果: 正确 (num) , error
+                setTimeout(function () {
+                    let num = Math.random() * 10;
+                    // 成功: num
+                    if (num >= 5) {
+                        resolve(num)
+                    } else {
+                        reject("err")
+                    }
+                }, 3000)
+            })
+    }
+
+
+    judgeNum().then(res=>{
+        console.log("网络请求正确", res)
+    }).catch(err=>{
+        console.error("错误异常", err)
+    })
+
+
+
+
+    // axios().then().catch()
+    //
+    // let promise = new Promise(function (resolve, reject) {
+    //     resolve(123)
+    //     reject("error")
+    // })
+    //
+    // promise.then(res=>{
+    //
+    // }).catch(err=>{
+    //
+    // })
+
+
+    // let result = ""
+    // setTimeout(function () {
+    //     result += "aaa"
+    //     setTimeout(function () {
+    //         result += "bbb"
+    //         setTimeout(function () {
+    //             result += "ccc"
+    //             console.log(result)
+    //         }, 2000)
+    //     }, 1000)
+    // }, 2000)
+
+
+
+    // new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //         console.log("aaa")
+    //         resolve()
+    //     }, 2000)
+    // }).then(res=>{
+    //     setTimeout(function () {
+    //         console.log("bbb")
+    //     }, 1000)
+    // })
+
+
+    // new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //         console.log("aaa")
+    //         resolve()
+    //     }, 2000)
+    // }).then(res=>{
+    //    return new Promise((resolve, reject)=>{
+    //         setTimeout(function () {
+    //             console.log("bbb")
+    //             resolve()
+    //         }, 1000)
+    //     })
+    // }).then(res=>{
+    //     setTimeout(function () {
+    //         console.log("ccc")
+    //     }, 2000)
+    // })
+
+
+
+    // new Promise(function (resolve, reject) {
+    //
+    // }).then(res=>{
+    //
+    // }).catch(err=> {
+    //
+    // })
+
+
+</script>
+
+
+</body>
+</html>

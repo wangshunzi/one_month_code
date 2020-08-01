@@ -1,0 +1,25 @@
+.box {
+  width: 180px;
+  height: 270px;
+  border: 1px dashed tomato;
+  margin: 100px auto;
+  position: relative;
+}
+.box image {
+  width: 100%;
+  height: 100%;
+}
+.box .left,
+.box .right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.box .left {
+  left: 0;
+}
+.box .right {
+  right: 0;
+}
+/*# sourceMappingURL=index.css.map */

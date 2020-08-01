@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器-行走的钟表</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div id="clock">
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+</div>
+
+<script>
+
+    window.onload = function () {
+        let hour = document.getElementById("hour")
+        let minute = document.getElementById("minute")
+        let second = document.getElementById("second")
+
+        // 获取当前的时间, 控制指针旋转不同角度即可
+        setInterval(function () {
+            let currentDate = new Date()
+
+            // 取出秒
+            let hm = currentDate.getMilliseconds();
+            let second_val = currentDate.getSeconds() + hm / 1000;
+            second.style.transform = 'rotate('+ second_val * 6 +'deg)';
+
+            // 取出分钟
+            let minute_val = currentDate.getMinutes() + second_val / 60;
+            minute.style.transform = 'rotate('+ minute_val * 6 +'deg)';
+
+            // 取出小时
+            let hour_val = currentDate.getHours() + minute_val / 60;
+            hour.style.transform = 'rotate('+ hour_val * 30 +'deg)';
+
+        }, 100)
+
+    }
+
+
+</script>
+
+</body>
+</html>

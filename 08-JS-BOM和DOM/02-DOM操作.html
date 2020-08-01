@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-DOM操作</title>
+    <script>
+
+
+
+    </script>
+</head>
+<body>
+
+
+<div id="box">
+   xxxx
+</div>
+
+<div class="box2">
+    <div class="box3">
+        1111
+    </div>
+    <div class="box3">
+        2222
+    </div>
+</div>
+
+
+<!--<input type="text" name="account">-->
+<!--<input type="text" name="pwd">-->
+
+
+
+<script>
+
+    // let dom = document.getElementsByClassName("box2")
+
+    let dom = document.querySelector(".box2>.box3")
+    console.log(dom.parentElement)
+
+
+
+
+    // let dom = document.getElementsByName("account")
+    // console.dir(dom[0])
+
+    // let dom = document.getElementsByTagName("div")
+    // console.log(dom[1])
+
+    // let dom = document.getElementById("box");
+    // console.dir(dom)
+</script>
+
+
+
+
+</body>
+</html>

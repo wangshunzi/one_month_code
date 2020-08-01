@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-事件处理</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 100px;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="box">
+    box
+</div>
+
+
+
+<script>
+    let box = document.getElementById("box");
+
+    box.onclick = function () {
+        // console.log(box.innerText);
+        // // box.innerHTML = "123"
+        // box.innerText = "<h1>一级</h1>";
+
+        // let h1 = document.createElement("h1")
+        // h1.innerText = "123";
+        //
+        // box.append(h1)
+
+        box.remove()
+
+    }
+
+
+
+</script>
+
+
+<!--<textarea class="content"></textarea>-->
+
+
+<!--<input type="text" class="content">-->
+
+<!--<a href="http://www.baidu.com">超链接</a>-->
+
+<!--<form action="">-->
+
+<!--    <input type="text">-->
+<!--    <input type="submit" value="提交">-->
+<!--</form>-->
+
+
+<!--<img src="111.png" alt="111111" xxx="abc" class="aaaaa">-->
+
+
+
+<script>
+
+    // let img_dom = document.getElementsByTagName("img")[0];
+    // img_dom.onclick = function () {
+    //     console.dir(img_dom.className);
+    //     img_dom.style.border = "2px solid red";
+    // }
+
+
+    // let a_dom = document.getElementsByTagName("a")[0]
+    // a_dom.onclick = function (event) {
+    //     // 阻止事件的默认行为
+    //     event.preventDefault()
+    //     alert("123")
+    //
+    // }
+
+
+    // let dom = document.getElementById("box")
+
+    // 点击dom的时候,
+    // dom.onclick = function () {
+    //     console.log("被点击了")
+    // }
+
+    // dom.ondblclick = function () {
+    //     console.log("双击")
+    //     // dom.style.width = "200px";
+    //     // dom.style.height = "300px";
+    // }
+
+
+    // dom.onmousedown = function () {
+    //     console.log("按下")
+    //     dom.style.fontSize = "30px";
+    // }
+    //
+    // dom.onmouseup = function () {
+    //     console.log("松开")
+    //     dom.style.fontSize = "10px";
+    // }
+
+
+    // dom.onmouseover = function () {
+    //     console.log("来了")
+    // }
+    // dom.onmouseout = function () {
+    //     console.log("出去")
+    // }
+
+    // dom.onkeydown = function () {
+    //     console.log("键位被按下")
+    // }
+
+
+    // let content = document.getElementsByClassName("content")[0]
+    // content.onchange = function () {
+    //     console.log("内容改变了")
+    // }
+    // content.onfocus = function () {
+    //     console.log("获取焦点")
+    //     content.value = ""
+    // }
+    // content.onkeydown = function (event) {
+    //     console.log("点击了", event)
+    //     if (event.ctrlKey && event.key === "a") {
+    //         console.log("全选")
+    //     }
+    // }
+
+
+
+    // document.body.onscroll = function () {
+    //     console.log("滚动了")
+    // }
+
+</script>
+
+
+</body>
+</html>
