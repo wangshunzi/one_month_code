@@ -4,28 +4,128 @@
     <meta charset="UTF-8">
     <title>03-事件处理</title>
     <style>
+        body {
+            height: 1000px;
+            background-color: tomato;
+            width: 2000px;
+        }
         #box {
-            width: 100px;
-            height: 100px;
+            width: 400px;
+            height: 400px;
             background-color: tomato;
             margin: 100px auto;
             text-align: center;
             line-height: 100px;
             transition: all 1s linear;
         }
+        #box>img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .active {
+            color: red;
+            border: 1px solid green;
+
+
+
+        }
     </style>
 </head>
 <body>
 
 
-<div id="box">
-    box
+<div id="box" style="width: 100px">
+    <img src="111.png" alt="" class="image">
+
 </div>
 
 
+<!--<div class="box"></div>-->
+
+<!--<img src="" alt="" xxx="123">-->
+
+
+<!--<div>1</div>-->
+<!--<div class="xxx">2</div>-->
 
 <script>
-    let box = document.getElementById("box");
+
+    let box = document.getElementById("box")
+
+    document.body.onresize = function () {
+        console.log("重置大小", box.clientWidth)
+        console.log(document.body.clientWidth);
+    }
+
+
+
+    // document.body.onscroll = function () {
+    //
+    //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    //     // console.log("滚动了", scrollTop)
+    //
+    //
+    //     if (scrollTop >= 100) {
+    //         console.log("显示xxx")
+    //     } else {
+    //         console.log("隐藏xxx")
+    //     }
+    //
+    //
+    // }
+
+    // let box = document.getElementById("box");
+    //
+    //
+    // box.onclick = function () {
+    //
+    //     // console.log(box.style.width);
+    //
+    //     // 想要获取尺寸, 统一走下面这种形式
+    //     // 元素最终尺寸
+    //     console.log(box.offsetWidth)
+    //
+    // }
+
+
+
+    // let img = document.getElementsByClassName("image")[0]
+    //
+    // box.onclick = function () {
+    //     img.parentElement.removeChild(img)
+    //     // box.removeChild(img)
+    //     // img.remove()
+    //     //
+    //     // box.innerHTML += `<img src="111.png" alt="">`
+    //
+    //     // let img = document.createElement("img")
+    //     // img.src = "111.png"
+    //     // img.alt = "图片"
+    //     // let new_node = img.cloneNode()
+    //
+    //     // box.appendChild(new_node)
+    //
+    // }
+
+
+
+</script>
+
+
+
+<script type="text/html">
+    let box = document.getElementsByTagName("div")[3];
+
+    box.onmouseover = function () {
+        // box.style.color = "red;";
+        // box.style.border = ""
+        //
+
+        box.className = "active"
+    }
+
+    box.getAttribute("xx")
 
     box.onclick = function () {
         // console.log(box.innerText);
