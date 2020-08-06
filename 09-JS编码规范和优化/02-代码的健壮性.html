@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-代码的健壮性</title>
+</head>
+<body>
+
+
+
+<script>
+
+    // let a = 10;
+    // let b = 20;
+    // let a = b = 10;
+    // let a = 1, b = 3;
+
+    // let arr = [1, 2, 3];
+    // for(let i = 0; i < arr.length; i++) {
+    //
+    // }
+
+    // let arr = [1, 2, 3];
+    // for(let i = 0, len = arr.length; i < len; i++) { }
+
+
+
+    // 全局作用
+    function updateUI() {
+        // 函数作用域
+        let func = document.getElementById.bind(document);
+        for(let i=0; i<10; i++) {
+            // 块级作用
+            // document
+            let dom = func("id"+i);
+            // ... ...
+        }
+    }
+
+
+    // function jiecheng(n) {}
+    //
+    //
+    // for(let i = 0, count=jiecheng(3); i < count; i ++) {
+    //
+    //
+    // }
+
+
+    // let i = 1;
+    // let a=arr[i++];
+
+    // function sum(a, b) {
+    //     let result = a + b;
+    //     return result;
+    // }
+
+
+    // let obj = {} // {}
+    //
+    // console.log(obj)
+
+
+    // let num =123;
+
+    // let num = new Number(123);
+    // console.log(num + 123);
+    // console.log(age)
+    //
+    // var age;
+    // function printAge() {
+    //     age = 10
+    //     // console.log(age)
+    // }
+    //
+    // printAge()
+    //
+    // console.log(age)
+
+    // js 当中的垃圾回收机制
+
+    // let a = {name: "Sz"}
+    // let b = a;
+    //
+    // a = null;
+
+
+
+    // function Person(name, age) {
+    //     if (age < 0) {
+    //         throw Error("年龄怎么是负数呢? 滚犊子!")
+    //     }
+    //     this.name = name;
+    //     this.age = age;
+    //     this.log = function () {
+    //         console.log(this.name);
+    //         console.log(this.age);
+    //     }
+    // }
+    //
+    //
+    // try {
+    //     let p = new Person("sz", -1)
+    //     p.log()
+    //
+    // } catch (e) {
+    //     console.log("年龄有问题", e.message)
+    // }
+
+
+
+
+
+
+
+
+    // 如果代码正常执行-
+    // 如果代码内部执行有问题, 函数, 会向外界抛出一个错误异常
+
+    // 加入我们在使用这个函数的时候, 内部抛出了异常, 而我们外界又没有处理, 那么程序就会直接崩溃
+    // 处理 -> 处理的逻辑来执行
+
+    // try {
+    //
+    //     // 把有可能执行时, 抛出异常错误的代码, 放到这里
+    //     eval("let a = 10;ccc")
+    //
+    // } catch (e) {
+    //     console.log("捕获到了, 代码当中的异常")
+    //     console.dir(e)
+    // } finally {
+    //     console.log("不管有没有报错, 都会执行")
+    // }
+    //
+    //
+    // console.log("xxx")
+
+    // function exec(func, b=1) {
+    //     if (b === undefined) {
+    //         b = 1;
+    //     }
+    //     // 看: b === undefined
+    //     // b = 1;
+    //     console.log(b)
+    //     // 潜意识, 把它当做是函数来进行处理
+    //     // if (typeof func === "function") {
+    //     //     func();
+    //     // } else {
+    //     //     console.warn("请传入一个函数类型的参数")
+    //     // }
+    //
+    // }
+    //
+    //
+    //
+    // exec(()=>{}, undefined)
+
+
+    // exec(123)
+    //
+    // console.log("abc")
+
+
+    // let firstName="";
+    // let age = 0;
+    // let arr = [];
+    //
+    //
+    // arr.push(12)
+    //
+    // // undefined.split
+    // // string
+    // // "a-b"
+    // console.log(firstName.split("-"));
+
+
+    // console.log("123");
+    //
+    // // undefined
+    // abc();
+    //
+    // console.log("abc");
+
+</script>
+
+
+</body>
+</html>
