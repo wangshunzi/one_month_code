@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通-404</title>
+    <style>
+        .back_home {
+            background-color: tomato;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+<h1>你访问的路径不存在</h1>
+<div class="back_home">回到首页</div>
+
+<script>
+    let dom = document.getElementsByClassName("back_home")[0];
+    dom.onclick = function () {
+        window.location = "/"
+    }
+
+
+</script>
+
+</body>
+</html>

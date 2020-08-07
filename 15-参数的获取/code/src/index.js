@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-
 // 静态路由
 // get
 // "/abc" === "abc"
