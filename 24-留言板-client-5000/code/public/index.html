@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>撩课-留言板</title>
+</head>
+<body>
+
+<h2 class="text-center mt-5 mb-2">撩课-留言板</h2>
+<div class="text-center">
+    <a href="add.html" class="btn btn-sm btn-danger">我要留言</a>
+</div>
+
+<div class="container mt-5 mb-5">
+
+</div>
+
+
+<!--引入了 axios  库-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.gtimg.com/cdnjs/libs/ejs/1.0.0/ejs.min.js"></script>
+<script>
+    // 使用这个库发送网络请求
+    // localhost:3000/api/list get
+    let container = document.querySelector(".container")
+    axios.get("http://localhost:3000/api/list").then(response => {
+        // console.log(response.data)
+
+        let template = `
+            <% if (items.length > 0) {
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+    %>
+            <div class="row">
+        <div class="card mb-3" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=item.title%>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <%=item.publish_time%>
+                </h6>
+                <p class="card-text">
+                    <%=item.content%>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% }} else { %>
+    暂无留言! <a href="/add.html">去添加一条留言!</a>
+    <% } %>
+        `
+
+        let result_str = ejs.render(template, {items: response.data.items})
+        // console.log(result_str)
+
+        container.innerHTML = result_str
+    })
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>撩课-留言板</title>
+</head>
+<body>
+<div class="container">
+    <h3 class="text-center mt-5 mb-2">请写下您的留言</h3>
+    <form method="post" role="form" id="addItemForm">
+        <div class="form-group">
+            <label for="title">留言的标题:</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题..." required>
+        </div>
+        <div class="form-group">
+            <label for="title">留言的内容:</label>
+            <textarea rows="5" class="form-control" id="content" name="content" placeholder="请输入留言内容..." required> </textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="提交留言" class="btn btn-danger float-right">
+        </div>
+    </form>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let form = document.getElementById("addItemForm");
+    form.onsubmit = function (evt) {
+        evt.preventDefault()
+
+        // 手动获取两个字段值
+        let title = document.getElementById("title").value;
+        let content = document.getElementById("content").value;
+
+        // 发送网络请求
+        // localhost:3000/api/add_item  post  title, content
+        axios.post("http://localhost:3000/api/add_item", {title, content}).then(response=>{
+            // console.log(response.data)
+            window.location = "./index.html"
+        })
+
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

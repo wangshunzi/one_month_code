@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>撩课-留言板</title>
+</head>
+<body>
+
+<h2 class="text-center mt-5 mb-2">撩课-留言板</h2>
+<div class="text-center">
+    <a href="/add" class="btn btn-sm btn-danger">我要留言</a>
+</div>
+
+<div class="container mt-5 mb-5">
+    <% if (items.length > 0) {
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+    %>
+            <div class="row">
+        <div class="card mb-3" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=item.title%>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <%=item.publish_time%>
+                </h6>
+                <p class="card-text">
+                    <%=item.content%>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% }} else { %>
+    暂无留言! <a href="/add">去添加一条留言!</a>
+    <% } %>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ teacherRouter.get("/list", function (request, response) {
     ])
 })
 teacherRouter.post("/add", function (request, response) {
+    console.log(request.body)
     response.send({
         code: 0,
         msg: "新增成功"
