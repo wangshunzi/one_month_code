@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网络请求axios 练习</title>
+</head>
+<body>
+
+<button onclick="sendGetRequest();">发送get请求</button>
+<button onclick="sendPostRequest();">发送post请求</button>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    axios.defaults.baseURL = "http://localhost:3000"
+
+    function sendGetRequest() {
+        let url = "/list"
+        axios.get(url, {params: {account: "sz", pwd: 123}}).then(function (response) {
+            console.log(response.data)
+        })
+    }
+
+    function sendPostRequest() {
+        let url = "/test_post";
+        axios.post(url, {account: "abc", pwd: "123"}).then(function (response) {
+            console.log(response.data)
+        })
+    }
+
+    // axios.get("/a.png").then(response=>{
+    //     // a图片 2
+    //     axios.get("/b.png").then(response=>{
+    //         // b 图片 3
+    //         // 合成图片 -> a b
+    //     })
+    // })
+    //
+    // // 3
+    // axios.all([axios.get("/a.png"), axios.get("/b.png")]).then(response=>{
+    //     // a, b
+    // })
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
