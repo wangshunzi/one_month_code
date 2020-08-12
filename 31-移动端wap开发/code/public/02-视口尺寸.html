@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视口尺寸</title>
+<!--    , initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 50vw;
+            /*margin: 10px auto;*/
+            /*height: 100px;*/
+            background-color: orange;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box1 {
+            width: 70vw;
+        }
+        .box2 {
+            width: 100vw;
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+
+<span>一段文本</span>
+
+<div class="box">
+    移动开发
+<!--    <div class="small"></div>-->
+</div>
+
+<div class="box box1">
+    移动开发
+</div>
+
+<div class="box box2">
+    移动开发
+</div>
+
+<script>
+
+    window.onresize = function () {
+        console.log(window.screen.width, "- ", window.screen.height);
+        console.log(document.documentElement.clientWidth, "=", document.documentElement.clientHeight)
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

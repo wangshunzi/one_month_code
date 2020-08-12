@@ -1,0 +1,9 @@
+{
+  "name": "联通移动端",
+  "short_name": "联通",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "这是一个联通应用"
+
+}

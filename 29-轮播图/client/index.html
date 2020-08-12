@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab选项卡切换</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div class="box">
+    <div class="container">
+        <ul>
+
+        </ul>
+    </div>
+    <div class="tabbar">
+        <ul>
+
+        </ul>
+    </div>
+</div>
+
+<script src="http://localhost:3000/js/axios.min.js"></script>
+<script src="http://localhost:3000/js/ejs.js"></script>
+<script>
+    axios.get("http://localhost:3000/api/lb/list").then(function (response) {
+        // console.log("成功", response.data)
+        renderData(response.data)
+        lb_dx()
+    }).catch(function (err) {
+        console.log(err)
+    })
+</script>
+
+<script>
+    function renderData(result) {
+        let title_ul = document.querySelector(".box>.tabbar>ul");
+        if(result.code === 0) {
+            let items = result.data;
+            // 所有的标题组成的数组 -> li
+            let titles = items.map(function (item) {
+                return item.title;
+            })
+            // 把数据渲染到ul
+            // let title_lis = titles.map(function (title) {
+            //     return `<li>${title}</li>`
+            // }).join("\n")
+
+            let title_lis = ejs.render(`
+                <% for(let i=0,len=titles.length; i < len; i++) { %>
+                    <li><%=titles[i]%></li>
+                <% } %>
+            `, {titles})
+            console.log(title_lis)
+
+            title_ul.innerHTML = title_lis
+
+            // 所有的图片组成的数组 -> li
+            let imgs = items.map(function (item) {
+                return item.img_url
+            })
+            let img_ul = document.querySelector(".box>.container>ul")
+            let img_lis = imgs.map(function (img_url) {
+                return `<li><a href="#"><img src="${img_url}" alt="1"></a></li>`
+            })
+
+            img_ul.innerHTML = img_lis.join("\n")
+
+        }
+    }
+
+</script>
+
+<script>
+    function lb_dx() {
+        let tabs = document.querySelectorAll(".box>.tabbar>ul>li")
+        let container_ul = document.querySelector(".box>.container>ul")
+        let container = document.getElementsByClassName("container")[0];
+        let tl = tabs.length;
+        let li_w = container.offsetWidth
+        for (let i = 0; i < tl; i++) {
+            let tab = tabs[i];
+            tab.onmouseover = function () {
+                console.log("xxx")
+                // 1. 把被鼠标放上来的tab, 添加一个 类名 active
+                // 其他的都得移除 active
+                tabs.forEach(item=>item.className="");
+                tab.className = "active";
+                // 移动ul left 值
+                // 604
+                container_ul.style.left = - i * li_w + "px";
+            }
+        }
+    }
+</script>
+
+
+
+</body>
+</html>
