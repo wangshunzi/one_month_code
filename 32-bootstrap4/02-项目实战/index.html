@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>撩课</title>
+    <meta name="Keywords" content="大数据,人工智能,python,全栈,h5,java"/>
+    <meta name="description" content="撩课学院-用心做教育,专注打造高端教育品牌"/>
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!--移动设备优先-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--引入bs , css 样式文件-->
+    <link rel="stylesheet" href="./lib/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+<!--1. 快捷菜单-->
+<div class="container-fluid d-none d-lg-block" id="short_cut">
+    <div class="menues container">
+        <div class="row">
+            <div class="col-lg-2">1</div>
+            <div class="col-lg-5">2</div>
+            <div class="col-lg-2">3</div>
+            <div class="col-lg-3">4</div>
+        </div>
+    </div>
+</div>
+
+<!--2. 导航栏-->
+<div class="container-fluid container-lg pr-0 pl-0">
+    <nav class="navbar-dark bg-dark navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">联通</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">讲师</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        课程
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">java</a>
+                        <a class="dropdown-item" href="#">h5</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">python</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<!--3. 轮播图-->
+<div class="container-fluid pr-0 pl-0">
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                    <picture>
+                        <source srcset="./assets/images/lunbo/1.jpg"  media="(min-width: 960px)">
+                        <img src="./assets/images/lunbo/1_small.jpg" class="d-block w-100" alt="...">
+                    </picture>
+
+
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <picture>
+                        <source srcset="./assets/images/lunbo/2.jpg"  media="(min-width: 960px)">
+                        <img src="./assets/images/lunbo/2_small.jpg" class="d-block w-100" alt="...">
+                    </picture>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <picture>
+                        <source srcset="./assets/images/lunbo/3.jpg"  media="(min-width: 960px)">
+                        <img src="./assets/images/lunbo/3_small.jpg" class="d-block w-100" alt="...">
+                    </picture>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--4. 热门好课-->
+<div class="container" id="hot-course">
+    <div class="title">
+        - 热 . 门 . 好 . 课 -
+    </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Java</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Python</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">H5</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-around">
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/course/1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/course/1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="./assets/images/course/1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            2
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            3
+        </div>
+    </div>
+
+</div>
+
+
+<!--5. 金牌讲师-->
+<div class="container-fluid container-lg" id="teacher">
+    <div class="teachers d-flex overflow-auto justify-content-around">
+        <div class="teacher">
+            讲师box
+        </div>
+        <div class="teacher">
+            讲师box
+        </div>
+        <div class="teacher">
+            讲师box
+        </div>
+        <div class="teacher">
+            讲师box
+        </div>
+        <div class="teacher">
+            讲师box
+        </div>
+        <div class="teacher">
+            讲师box
+        </div>
+    </div>
+
+</div>
+
+
+<!--6. -->
+<div class="container-fluid container-lg">
+    <div class="row">
+        <div class="col-4">
+            <div id="list-example" class="list-group"> <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a> <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a> <a class="list-group-item list-group-item-action active" href="#list-item-3">Item 3</a> <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a> </div>
+        </div>
+        <div class="col-8">
+            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example overflow-auto" style="height: 200px;">
+                <h4 id="list-item-1">Item 1</h4>
+                <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+                <h4 id="list-item-2">Item 2</h4>
+                <p>Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit enim elit aliqua esse irure. Laborum nisi sit est tempor laborum mollit labore officia laborum excepteur commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur ipsum commodo tempor sunt in proident.</p>
+                <h4 id="list-item-3">Item 3</h4>
+                <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+                <h4 id="list-item-4">Item 4</h4>
+                <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--引入js-->
+<script src="./lib/js/jquery.slim.min.js"></script>
+<script src="./lib/js/popper.min.js"></script>
+<script src="./lib/js/bootstrap.js"></script>
+
+
+
+</body>
+</html>

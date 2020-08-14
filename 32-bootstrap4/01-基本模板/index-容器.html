@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>bs4</title>
+
+<!--    基本配置 编码, 视口-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 引入bootstrap, css 样式文件-->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .box {
+            background-color: tomato;
+        }
+        .box .row {
+
+        }
+        .c {
+            border: 5px solid yellow;
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box container-fluid">
+    <div class="no-gutters row justify-content-start justify-content-md-center justify-content-lg-between justify-content-xl-around">
+        <div class="c col-12 order-1 col-md-8 order-md-0">一段文章描述</div>
+        <div class="c col-12 order-0 col-md-4 order-md-1">图片</div>
+    </div>
+</div>
+
+
+<!--<div class="box container">-->
+<!--    <div class="row">-->
+<!--&lt;!&ndash;        特效屏幕尺寸下, 占满12列&ndash;&gt;-->
+<!--        <div class="c col-12 col-sm-6 col-md-4">位置1</div>-->
+<!--        <div class="c col-12 col-sm-6 col-md-4">位置2</div>-->
+<!--        <div class="c col-12 col-sm-6 col-md-4">位置3</div>-->
+<!--        <div class="c col-12 col-sm-6 col-md-4">位置4</div>-->
+<!--        <div class="c col-12 col-sm-6 col-md-4">位置5</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<div class="box container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="c col-1">col</div>-->
+<!--        <div class="c col-1">col</div>-->
+<!--        <div class="c col-1">col</div>-->
+<!--        <div class="c col-1">col</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="box container">-->
+<!--    <div class="row">-->
+<!--        <div class="c col-4">4</div>-->
+<!--        <div class="c col-2">3</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--超小屏幕 流式容器-->
+<!--中等屏幕开始, 都是, 固体容器-->
+<!--<div class="box container-fluid container-md">-->
+<!--    box-->
+<!--</div>-->
+
+
+<!-- 引入所需的js文件-->
+<script src="./js/jquery.slim.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+
+</body>
+</html>
