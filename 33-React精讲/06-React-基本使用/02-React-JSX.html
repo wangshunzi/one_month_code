@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React-jsx</title>
+</head>
+<body>
+
+<div id="root">
+
+</div>
+
+<!--引入react 所必须的 几个 库-->
+<script src="../lib/react.development.js"></script>
+<script src="../lib/react-dom.development.js"></script>
+<script src="../lib/babel.min.js"></script>
+
+
+<script type="text/html">
+
+
+    // JSX = JS + XML
+    // 我们可以在 xml当中,去嵌入 js 表达式
+    // 1. 创建一个虚拟dom对象
+
+    // jsx
+    // <> 当做是 html 来处理 xml
+    // {} js 表达式来处理
+    let data = 123;
+    let cls = "xxx"
+    let img_src = "2.png"
+    let arr = [1, 2, 3, 4];
+    // [
+    //
+    <li>1</li>,
+    //
+    <li>2</li>,
+    //
+    <li>3</li>,
+    //
+    <li>4</li>
+    // ]
+    let sex = "0";
+    // jsx 当中
+    // 样式属性的值, 一定是一个对象
+    // { }
+    let styleObj = {
+    fontSize: 30,
+    color: "green",
+    textAlign: "center"
+    }
+    let v_dom = (
+
+    <div className={cls} style={{}}>
+        <ul>
+            {sex === "1" ? "男" : "女"}
+        </ul>
+
+    </div>
+
+    //
+    <div className={cls}>
+        // <p>{data}</p>
+        // <img src="./2.png"/>
+        // <label for></label>
+        //
+    </div>
+
+    //
+    <form action="" className="test">
+        // <label htmlFor="input">xxx</label>
+        // <input type="text" id="input"/>
+        //
+    </form>
+    )
+
+    // 2. 渲染虚拟的DOM对象, 到指定的容器内
+    ReactDOM.render(v_dom, document.getElementById("root"))
+
+</script>
+
+<script type="text/babel">
+
+    // class Card extends React.Component {
+    //     render() {
+    //         return (
+    //             <div className="card">
+    //                 这是一个组件
+    //             </div>
+    //         )
+    //     }
+    // }
+
+    // React.createElement("div", null, "xxx")
+
+    let v_dom =
+        <div>
+            <p>xxx</p>
+            {/*<p>123</p>*/}
+        </div>
+
+
+
+    ReactDOM.render(v_dom, document.getElementById("root"))
+
+
+
+</script>
+
+
+</body>
+</html>

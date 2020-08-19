@@ -1,0 +1,15 @@
+.section .top {
+  height: 50px;
+  background-color: orangered;
+  text-align: center;
+  line-height: 50px;
+  font-size: 26px;
+  color: #fff;
+}
+.section .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: gray;
+}
+/*# sourceMappingURL=index.css.map */

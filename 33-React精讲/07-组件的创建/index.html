@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建组件</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<!--引入react 所必须的 几个 库-->
+<script src="../lib/react.development.js"></script>
+<script src="../lib/react-dom.development.js"></script>
+<script src="../lib/babel.min.js"></script>
+
+<script type="text/babel">
+
+    const MyComponents = {
+        Card: function () {
+            return <div>card</div>
+        },
+        Line: function () {
+            return <div>line</div>
+        }
+    }
+    ReactDOM.render(<MyComponents.Line/>, document.getElementById("root"))
+
+    // function Card() {
+    //     return <div>
+    //         123
+    //         <p>abc</p>
+    //     </div>
+    // }
+
+    // class Card extends React.Component {
+    //     render() {
+    //         return <div>
+    //             456
+    //         </div>
+    //     }
+    // }
+
+
+
+</script>
+
+
+</body>
+</html>

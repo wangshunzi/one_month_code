@@ -1,0 +1,18 @@
+.box {
+  width: 300px;
+  margin: 100px auto;
+  border: 1px dashed tomato;
+}
+.top input {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+}
+.content ul {
+  list-style: none;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React-基本使用</title>
+</head>
+<body>
+
+<div id="root">
+
+</div>
+
+<!--引入react 所必须的 几个 库-->
+<script src="../lib/react.development.js"></script>
+<script src="../lib/react-dom.development.js"></script>
+<script src="../lib/babel.min.js"></script>
+
+<script type="text/babel">
+
+    // class Test extends React.Component {
+    //     render() {
+    //         return <div>xxx</div>
+    //     }
+    // }
+    //
+    // ReactDOM.render(<Test/>, document.getElementById("root"))
+
+</script>
+
+<!--
+jsx
+// 1. 可以帮我们快速的创建虚拟dom对象
+// 2. 长得非常 html -> babel -> 虚拟dom对象
+-->
+<script type="text/babel">
+
+
+    // 1. 创建一个虚拟dom对象
+    let v_dom = React.createElement("div", null, React.createElement("p", null, "123456"))
+    let v_dom2 = <div>
+        <p>123456</p>
+    </div>
+    console.log(v_dom, v_dom2)
+
+    // 2. 渲染虚拟的DOM对象, 到指定的容器内
+    // ReactDOM.render(v_dom, document.getElementById("root"))
+
+</script>
+
+</body>
+</html>

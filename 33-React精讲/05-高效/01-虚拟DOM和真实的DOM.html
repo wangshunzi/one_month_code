@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>虚拟的DOM是什么</title>
+</head>
+
+<body>
+
+
+<h1>这就是真实DOM</h1>
+
+<div id="root"></div>
+
+
+<script src="../lib/react.development.js"></script>
+
+<script src="../lib/react-dom.development.js"></script>
+
+<script src="../lib/babel.min.js"></script>
+
+
+
+<script type="text/babel">
+
+    // let v_dom = (
+    //
+    //     <div>现在这个玩意就是虚拟DOM</div>
+    //
+    // )
+
+    let t_dom = document.getElementsByTagName("h1")[0]
+
+    // 打印两个对象, 观察内部属性
+
+    // console.dir(v_dom)
+
+    console.dir(t_dom)
+    t_dom.innerText = "1"
+    t_dom.innerText = "2"
+    t_dom.innerText = "3"
+    t_dom.innerText = "4"
+    t_dom.innerText = "5"
+
+    // ReactDOM.render(v_dom, document.getElementById("root"))
+
+</script>
+
+
+
+</body>
+
+</html>

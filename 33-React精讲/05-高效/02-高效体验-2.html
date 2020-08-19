@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>虚拟的DOM树操作</title>
+</head>
+
+<body>
+
+
+<div id="person">
+
+</div>
+
+
+<script src="../lib/react.development.js"></script>
+<script src="../lib/react-dom.development.js"></script>
+<script src="../lib/babel.min.js"></script>
+
+<script type="text/babel">
+    class PersonInfo extends React.Component {
+        state = {
+            name: "sz2",
+            age: 18,
+            address: "上海"
+        }
+        change = () => {
+            this.setState({
+                address: "北京"
+            })
+        }
+
+        render() {
+            const {name, age, address} = this.state
+
+            return (
+                <div>
+                    <div className="name">姓名: {name}</div>
+                    <div className="age">年龄: {age}</div>
+                    <div className="address">地址: {address}</div>
+                    <button className="update" onClick={this.change}>更新信息</button>
+                </div>
+            )
+        }
+    }
+
+
+    let v_dom = <div>
+        <PersonInfo/>
+        <PersonInfo/>
+    </div>
+
+    ReactDOM.render(v_dom, document.getElementById("person"))
+
+
+</script>
+
+
+</body>
+
+</html>

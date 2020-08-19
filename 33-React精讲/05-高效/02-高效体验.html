@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>原生的DOM树操作</title>
+
+</head>
+
+<body>
+
+
+
+<div id="person">
+    <div class="name">姓名: sz</div>
+    <div class="age">年龄: 18</div>
+    <div class="address">地址: 上海</div>
+</div>
+
+<button class="update">更新信息</button>
+
+<script>
+
+    function update(person) {
+        let template = `
+            <div class="name">姓名: ${person.name}</div>
+            <div class="age">年龄: ${person.age}</div>
+            <div class="address">地址: ${person.address}</div>
+        `
+        document.getElementById("person").innerHTML = template
+
+    }
+
+    let btn = document.getElementsByClassName("update")[0];
+    btn.onclick = function () {
+        // 问题1: 不仅仅更新了数据, 连对应的DOM树都进行了重建
+        update({
+            name: "小撩",
+            age: 22,
+            address: "北京"
+        })
+
+        // 问题2: 即使数据部分更改/甚至不改, 也会更新全部DOM+全部数据
+
+        update({
+            name: "sz",
+            age: 18,
+            address: "北京"
+        })
+
+
+
+        // 问题3: 即使两次非常接近的数据修改, 最终也会导致数据两次更新, 即使一闪而过, 对用户来说毫无意义
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.color_box {
+    width: 400px;
+    height: 300px;
+    margin: 100px auto;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+.color_box .tabs {
+    height: 40px;
+    background-color: green;
+    display: flex;
+}
+.color_box .tabs div {
+    flex: 1;
+    border: 1px solid gray;
+    text-align: center;
+    line-height: 38px;
+}
+.color_box .content {
+    text-align: center;
+    font-size: 30px;
+    flex: 1;
+    background-color: grey;
+}

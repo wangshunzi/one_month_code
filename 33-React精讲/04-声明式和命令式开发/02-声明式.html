@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声明式</title>
+    <style>
+
+        body {
+
+            background-color: rgba(0, 0, 0, 0.8);
+
+        }
+
+        .times {
+
+            text-align: center;
+
+            margin-top: 100px;
+
+            font-size: 80px;
+
+            color: #fff;
+
+        }
+
+        .notice {
+
+            color: lightgray;
+
+            font-size: 20px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            user-select: none;
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="root">
+
+</div>
+
+<script src="../lib/react.development.js"></script>
+<script src="../lib/react-dom.development.js"></script>
+<script src="../lib/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class LeiJia extends React.Component {
+
+        state = {
+            num: 0
+        }
+        add = ()=>{
+            this.setState({
+                num: this.state.num + 1
+            })
+        }
+        render() {
+            return (
+                <div>
+                    <h1 className="times">{this.state.num}</h1>
+                    <p className="notice" onClick={this.add}>点我,次数更新</p>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<LeiJia/>, document.getElementById("root"))
+
+</script>
+
+
+
+</body>
+</html>

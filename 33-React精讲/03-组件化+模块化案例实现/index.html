@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件化+模块化实现案例</title>
+    <style>
+        #root{
+            width: 450px;
+            margin: 100px auto;
+            border: 2px dashed gray;
+        }
+    </style>
+
+    <!--  对样式的分离  -->
+    <link rel="stylesheet" href="components/header/index.css">
+    <link rel="stylesheet" href="components/teacherCard/index.css">
+    <link rel="stylesheet" href="components/teacherList/index.css">
+</head>
+<body>
+
+<div id="root"></div>
+
+<!--引入必备的react库, 如无本地文件, 可引入对应的在线地址 或者 自行下载-->
+<script src="./lib/react.development.js"></script>
+<script src="./lib/react-dom.development.js"></script>
+<script src="./lib/babel.min.js"></script>
+
+
+<!--分离组件-->
+<script type="text/babel" src="components/header/index.js"></script>
+<script type="text/babel" src="components/teacherCard/index.js"></script>
+<script type="text/babel" src="components/teacherList/index.js"></script>
+
+<!--使用组件-->
+<script type="text/babel">
+    let v_dom = (
+        <div>
+            <Header/>
+            <TeacherList>
+                <TeacherCard/>
+                <TeacherCard/>
+                <TeacherCard/>
+                <TeacherCard/>
+            </TeacherList>
+        </div>
+    )
+    ReactDOM.render(v_dom, document.getElementById("root"))
+</script>
+
+</body>
+</html>
