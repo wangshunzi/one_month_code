@@ -1,0 +1,18 @@
+.nav_bar {
+  height: 50px;
+  background-color: darkcyan;
+}
+.nav_bar ul {
+  list-style: none;
+  display: flex;
+}
+.nav_bar ul li {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  background: yellowgreen;
+}
+.nav_bar ul li:hover {
+  background: grey;
+}
+/*# sourceMappingURL=index.css.map */

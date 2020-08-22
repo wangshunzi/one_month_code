@@ -8,6 +8,8 @@ import App from "./App";
 // node  commonjs: module.exports = "xxx" ; require()
 // ES6 模块化规范
 // export xxx;   import xxx from 模块名字
+// SPA
+// SINGER PAGE APP
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));

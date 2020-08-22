@@ -1,0 +1,30 @@
+.header_pane {
+  background: #fff !important;
+  padding: 0 !important;
+  position: relative;
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+  .info {
+    //background-color: green;
+    margin-left: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+    .welcome {
+      margin: 0 15px;
+    }
+  }
+}
